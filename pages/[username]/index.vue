@@ -16,9 +16,9 @@ import DesignOne from '~/templates/designone/index.vue'
 import DesignTwo from '~/templates/designtwo/index.vue'
 import { $fetch } from 'ofetch'
 import { useRoute } from 'vue-router'
-const isLoading = ref(true)
+const isLoading = ref<boolean>(true)
 const user = ref<UserInfo>()
-const hasQuery = ref(false)
+const hasQuery = ref<boolean>(false)
 const route = useRoute()
 interface UserInfo {
   name: string

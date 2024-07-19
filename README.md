@@ -2,6 +2,18 @@
 
 Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
+# Wedding Invitation Website
+
+This is a website for wedding invitation online, built with Nuxt 3, Tailwind CSS, TypeScript, ESLint, and Prettier.
+
+# Build with
+
+- Nuxt 3 (https://nuxt.com/docs/getting-started/installation)
+- Tailwind CSS (https://tailwindcss.com/)
+- Typescript (https://www.typescriptlang.org/)
+- Typescript-eslint (https://typescript-eslint.io/)
+- Prettier (https://prettier.io/)
+
 ## Setup
 
 Make sure to install the dependencies:
