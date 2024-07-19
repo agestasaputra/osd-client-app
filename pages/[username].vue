@@ -19,7 +19,6 @@ const hasQuery = ref('')
 const route = useRoute()
 onMounted(() => {
   console.log('route.query.to:', route.query.to)
-  fetch
   setTimeout(() => {
     hasQuery.value = route.query && route.query.guest ? true : false
     setLoading(false)
