@@ -14,4 +14,5 @@ export default defineNuxtConfig({
     strict: true,
     noImplicitAny: true,
   },
+  plugins: ['~/plugins/vueperslides.ts'],
 })

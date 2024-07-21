@@ -4,8 +4,10 @@
       <p>Loading...</p>
     </template>
     <template v-if="!isLoading">
-      <DesignOne v-if="user && user.package === 'design-one'" />
-      <DesignTwo v-if="user && user.package === 'design-two'" />
+      <main class="mobile-wrapper w-[375px] mx-auto">
+        <DesignOne v-if="user && user.package === 'design-one'" />
+        <DesignTwo v-if="user && user.package === 'design-two'" />
+      </main>
     </template>
   </div>
 </template>

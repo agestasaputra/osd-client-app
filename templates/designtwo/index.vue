@@ -1,73 +1,84 @@
 <template>
   <main>
-    <section
-      class="bg-[url('assets/images/img-bg-2.jpg')] bg-[center_top_-17rem] bg-cover w-full h-svh"
-    ></section>
-    <section>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 1440 320"
-        class="absolute bottom-[-1px]"
+    <transition v-if="isCoverOpen" name="fade" mode="out-in">
+      <section>
+        <div
+          class="bg-[url('/assets/images/img-bg-2.jpg')] w-full h-[100svh] bg-cover absolute z-10 max-w-[375px] flex flex-col justify-around items-center grayscale text-white"
+        >
+          <div class="text-center">
+            <h4>Wedding Invitation</h4>
+            <h1 class="text-[40px] leading-none">Siska & Agesta</h1>
+            <h4>27.12.2023</h4>
+          </div>
+          <div>
+            <button
+              class="rounded-full bg-white px-4 py-1 pb-2 text-black shadow-md"
+              @click="handleCoverOpen(false)"
+            >
+              Buka undangan
+            </button>
+            <!-- <button class="rounded-full bg-slate-950 px-4 py-1 pb-2 text-white">
+              Buka undangan
+            </button> -->
+          </div>
+        </div>
+      </section>
+    </transition>
+
+    <!-- <section>
+      <vueper-slides
+        :bullets="false"
+        autoplay
+        fade
+        touchable
+        fixedHeight="100svh"
+        ref="vueperSlide"
+        class="grayscale"
       >
-        <path
-          fill="#fff"
-          fill-opacity="1"
-          d="M0,224L120,208C240,192,480,160,720,160C960,160,1200,192,1320,208L1440,224L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"
-        ></path>
-      </svg>
-      <!-- <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 1440 320"
-        class="absolute bottom-0"
-      >
-        <path
-          fill="#FFF"
-          fill-opacity="1"
-          d="M0,224L120,202.7C240,181,480,139,720,138.7C960,139,1200,181,1320,202.7L1440,224L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"
-        ></path>
-      </svg> -->
-    </section>
-    <section class="px-[200px]">
-      <h3 class="text-center text-3xl mb-10 font-semibold">Locations</h3>
-      <div
-        v-if="photos && photos.length"
-        class="w-full grid grid-cols-3 grid-rows-1 gap-5"
-      >
-        <template v-for="(photo, key) in photos" :key="key">
-          <figure class="h-[220px]">
-            <img
-              :src="photo.src"
-              :alt="photo.title"
-              class="w-full h-full object-cover rounded-lg"
-            />
-          </figure>
+        <template #arrow-left>
+          <div class="opacity-0">kiri</div>
         </template>
-      </div>
+        <template #arrow-right>
+          <div class="opacity-0">kanan</div>
+        </template>
+        <vueper-slide
+          v-for="(slide, key) in slides"
+          :key="key"
+          :image="slide.image"
+        >
+        </vueper-slide>
+      </vueper-slides>
     </section>
 
-    <section class="px-[200px] mt-24">
-      <h3 class="text-2xl mb-5 font-semibold">Feature venues</h3>
-      <div class="flex rounded-xl shadow-md h-[400px]">
-        <div
-          class="rounded-l-xl w-[28%] bg-[url('assets/images/img-card.jpg')] bg-cover object-cover overflow-hidden"
-        ></div>
-        <div class="flex-1 px-24 py-8">
-          <h3 class="text-3xl mb-5 font-semibold">Feature venues</h3>
-          <p class="mb-5">
-            The whole complex consists of two residential buildings, a church,
-            and a portico (known as Loggia Durini) that can host weddings and
-            events in a truly unique setting.
-          </p>
-          <p>
-            But the special feature of Villa Balbianello is above all the vast
-            garden that surrounds the dwellings, with magnificent holm oaks
-            pruned into an umbrella shape so as to offer a splendid view of Lake
-            Como from inside the
-          </p>
+    <section class="absolute w-full max-w-[375px] bottom-[-1px]">
+      <div class="text-right px-7">
+        <div class="flex flex-row items-center">
+          <div
+            class="bg-[#fff] w-full h-[2px] text-[#fff] inline-block flex-1"
+          ></div>
+          <h3 class="text-white ml-2">The Wedding Of</h3>
+        </div>
+        <div class="flex flex-col my-4">
+          <h1 class="text-[60px] leading-none text-white">SISKA &</h1>
+          <h1 class="text-[60px] leading-none text-white">AGESTA</h1>
+        </div>
+        <div class="flex flex-row items-center">
+          <div
+            class="bg-[#fff] w-full h-[2px] text-[#fff] inline-block flex-1"
+          ></div>
+          <h3 class="text-[14px] text-white ml-2">Minggu, 27 Desember 2024</h3>
         </div>
       </div>
-    </section>
-
+      <div>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+          <path
+            fill="#1D1D1D"
+            fill-opacity="1"
+            d="M0,224L80,202.7C160,181,320,139,480,138.7C640,139,800,181,960,181.3C1120,181,1280,139,1360,117.3L1440,96L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"
+          ></path>
+        </svg>
+      </div>
+    </section> -->
     <section>
       <br />
     </section>
@@ -77,40 +88,96 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { onMounted } from 'vue'
+import { useRoute } from 'vue-router'
 import imgBg from '@/assets/images/img-bg-2.jpg'
+import imgBanner1 from '@/assets/images/img-banner-1.jpg'
+import imgBanner2 from '@/assets/images/img-banner-2.jpg'
+import imgBanner3 from '@/assets/images/img-banner-3.jpg'
+
 interface IPhoto {
   title: string
-  src: string
+  image: string
 }
-const photos = ref<IPhoto[] | undefined>(undefined)
+
+const slides = ref<IPhoto[] | undefined>(undefined)
+const locationPhotos = ref<IPhoto[] | undefined>(undefined)
+const route = useRoute()
+let brides = ref<string[]>([])
+let isCoverOpen = ref<boolean>(false)
+const modules = []
+
 onMounted(() => {
-  photos.value = [
+  console.log('route:', route.params.username)
+  setTimeout(() => {
+    isCoverOpen.value = true
+  }, 1000)
+  setTimeout(() => {
+    const dom: HTMLElement | null = document.querySelector(
+      '.vueperslides__arrow--next',
+    )
+    console.log('dom:', dom)
+    dom && dom.click()
+  }, 1)
+
+  slides.value = [
     {
       title: 'Photo 1',
-      src: imgBg,
+      image: imgBanner1,
     },
     {
       title: 'Photo 2',
-      src: imgBg,
+      image: imgBanner2,
     },
     {
       title: 'Photo 3',
-      src: imgBg,
-    },
-    {
-      title: 'Photo 1',
-      src: imgBg,
-    },
-    {
-      title: 'Photo 2',
-      src: imgBg,
-    },
-    {
-      title: 'Photo 3',
-      src: imgBg,
+      image: imgBanner3,
     },
   ]
+  locationPhotos.value = [
+    {
+      title: 'Photo 1',
+      image: imgBg,
+    },
+    {
+      title: 'Photo 2',
+      image: imgBg,
+    },
+    {
+      title: 'Photo 3',
+      image: imgBg,
+    },
+    {
+      title: 'Photo 1',
+      image: imgBg,
+    },
+    {
+      title: 'Photo 2',
+      image: imgBg,
+    },
+    {
+      title: 'Photo 3',
+      image: imgBg,
+    },
+  ]
+  brides.value = (route.params.username as string).split('-')
 })
+
+function handleCoverOpen(value: boolean) {
+  isCoverOpen.value = value
+}
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+.fade-leave-from {
+  opacity: 0;
+}
+</style>
