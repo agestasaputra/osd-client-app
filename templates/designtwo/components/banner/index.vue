@@ -8,7 +8,7 @@
           autoplay
           fade
           touchable
-          fixedHeight="100svh"
+          fixedHeight="100vh"
           ref="vueperSlide"
           class="grayscale"
         >
