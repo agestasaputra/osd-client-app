@@ -1,10 +1,16 @@
 <template>
-  <div>
+  <div
+    :class="{
+      'h-[100vh]': true,
+      'bg-neutral-900 text-white':
+        userInfo && userInfo.package.name === 'design-two',
+    }"
+  >
     <template v-if="isLoading">
       <p>Loading...</p>
     </template>
     <template v-if="!isLoading">
-      <main class="mobile-wrapper w-[375px] mx-auto">
+      <div class="mobile-wrapper w-[375px] mx-auto shadow-inner">
         <DesignOne
           v-if="userInfo && userInfo.package.name === 'design-one'"
           :user-info="userInfo"
@@ -13,7 +19,7 @@
           v-if="userInfo && userInfo.package.name === 'design-two'"
           :user-info="userInfo"
         />
-      </main>
+      </div>
     </template>
   </div>
 </template>
