@@ -1,183 +1,68 @@
 <template>
   <main>
-    <transition v-if="isCoverOpen" name="fade" mode="out-in">
-      <section>
-        <div
-          class="bg-[url('/assets/images/img-bg-2.jpg')] w-full h-[100svh] bg-cover absolute z-10 max-w-[375px] flex flex-col justify-around items-center grayscale text-white"
-        >
-          <div class="text-center">
-            <h4>Wedding Invitation</h4>
-            <h1 class="text-[40px] leading-none">Siska & Agesta</h1>
-            <h4>27.12.2023</h4>
-          </div>
-          <div>
-            <button
-              class="rounded-full bg-white px-4 py-1 pb-2 text-black shadow-md"
-              @click="handleCoverOpen(false)"
-            >
-              Buka undangan
-            </button>
-            <!-- <button class="rounded-full bg-slate-950 px-4 py-1 pb-2 text-white">
-              Buka undangan
-            </button> -->
-          </div>
-        </div>
-      </section>
-    </transition>
-
-    <!-- <section>
-      <vueper-slides
-        :bullets="false"
-        autoplay
-        fade
-        touchable
-        fixedHeight="100svh"
-        ref="vueperSlide"
-        class="grayscale"
-      >
-        <template #arrow-left>
-          <div class="opacity-0">kiri</div>
-        </template>
-        <template #arrow-right>
-          <div class="opacity-0">kanan</div>
-        </template>
-        <vueper-slide
-          v-for="(slide, key) in slides"
-          :key="key"
-          :image="slide.image"
-        >
-        </vueper-slide>
-      </vueper-slides>
-    </section>
-
-    <section class="absolute w-full max-w-[375px] bottom-[-1px]">
-      <div class="text-right px-7">
-        <div class="flex flex-row items-center">
-          <div
-            class="bg-[#fff] w-full h-[2px] text-[#fff] inline-block flex-1"
-          ></div>
-          <h3 class="text-white ml-2">The Wedding Of</h3>
-        </div>
-        <div class="flex flex-col my-4">
-          <h1 class="text-[60px] leading-none text-white">SISKA &</h1>
-          <h1 class="text-[60px] leading-none text-white">AGESTA</h1>
-        </div>
-        <div class="flex flex-row items-center">
-          <div
-            class="bg-[#fff] w-full h-[2px] text-[#fff] inline-block flex-1"
-          ></div>
-          <h3 class="text-[14px] text-white ml-2">Minggu, 27 Desember 2024</h3>
-        </div>
-      </div>
-      <div>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-          <path
-            fill="#1D1D1D"
-            fill-opacity="1"
-            d="M0,224L80,202.7C160,181,320,139,480,138.7C640,139,800,181,960,181.3C1120,181,1280,139,1360,117.3L1440,96L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"
-          ></path>
-        </svg>
-      </div>
-    </section> -->
-    <section>
-      <br />
-    </section>
+    <DesignTwoCoverComponent
+      :user-info="props.userInfo"
+      @handle-animation-osd-cover="handleAnimationOsdCover"
+    />
+    <DesignTwoBannerComponent
+      :user-info="props.userInfo"
+      :is-content-visible="isContentVisible"
+    />
   </main>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue'
 import { onMounted } from 'vue'
-import { useRoute } from 'vue-router'
-import imgBg from '@/assets/images/img-bg-2.jpg'
-import imgBanner1 from '@/assets/images/img-banner-1.jpg'
-import imgBanner2 from '@/assets/images/img-banner-2.jpg'
-import imgBanner3 from '@/assets/images/img-banner-3.jpg'
+// import { useRoute } from 'vue-router'
+import DesignTwoCoverComponent from '~/templates/designtwo/components/cover/index.vue'
+import DesignTwoBannerComponent from '~/templates/designtwo/components/banner/index.vue'
 
-interface IPhoto {
-  title: string
-  image: string
-}
-
-const slides = ref<IPhoto[] | undefined>(undefined)
-const locationPhotos = ref<IPhoto[] | undefined>(undefined)
-const route = useRoute()
-let brides = ref<string[]>([])
-let isCoverOpen = ref<boolean>(false)
-const modules = []
-
-onMounted(() => {
-  console.log('route:', route.params.username)
-  setTimeout(() => {
-    isCoverOpen.value = true
-  }, 1000)
-  setTimeout(() => {
-    const dom: HTMLElement | null = document.querySelector(
-      '.vueperslides__arrow--next',
-    )
-    console.log('dom:', dom)
-    dom && dom.click()
-  }, 1)
-
-  slides.value = [
-    {
-      title: 'Photo 1',
-      image: imgBanner1,
-    },
-    {
-      title: 'Photo 2',
-      image: imgBanner2,
-    },
-    {
-      title: 'Photo 3',
-      image: imgBanner3,
-    },
-  ]
-  locationPhotos.value = [
-    {
-      title: 'Photo 1',
-      image: imgBg,
-    },
-    {
-      title: 'Photo 2',
-      image: imgBg,
-    },
-    {
-      title: 'Photo 3',
-      image: imgBg,
-    },
-    {
-      title: 'Photo 1',
-      image: imgBg,
-    },
-    {
-      title: 'Photo 2',
-      image: imgBg,
-    },
-    {
-      title: 'Photo 3',
-      image: imgBg,
-    },
-  ]
-  brides.value = (route.params.username as string).split('-')
+const props = defineProps({
+  userInfo: {
+    type: Object as PropType<UserInfo>,
+    default: [],
+    required: true,
+  },
 })
 
-function handleCoverOpen(value: boolean) {
-  isCoverOpen.value = value
+interface UserInfo {
+  profile: {
+    name: string
+    email: string
+  }
+  package: {
+    name: string
+  }
+  weddingInfo: {
+    brides: string[]
+    date: string
+    location: {
+      name: string
+      address: string
+    }
+  }
+}
+
+let brides = ref<string[]>([])
+let isContentVisible = ref<boolean>(false)
+const { $anime } = useNuxtApp()
+
+onMounted(() => {
+  setTimeout(() => {
+    handleAnimationOsdCover('in')
+  }, 1)
+})
+
+function handleAnimationOsdCover(type: 'in' | 'out') {
+  $anime({
+    targets: '#osd-cover',
+    translateY: type === 'in' ? '100vh' : '0vh',
+    duration: 800,
+    easing: 'easeInOutExpo',
+  })
+  isContentVisible.value = type === 'in' ? false : true
 }
 </script>
 
-<style lang="scss" scoped>
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.5s;
-}
-
-.fade-enter,
-.fade-leave-to {
-  opacity: 0;
-}
-.fade-leave-from {
-  opacity: 0;
-}
-</style>
+<style lang="scss" scoped></style>
