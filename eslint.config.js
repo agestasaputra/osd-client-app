@@ -44,6 +44,7 @@ export default tseslint.config(
     },
     rules: {
       'no-console': 'warn',
+      '@typescript-eslint/no-unsafe-call': 'off',
       '@typescript-eslint/no-explicit-any': 'error',
     },
   },
