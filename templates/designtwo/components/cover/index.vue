@@ -1,11 +1,10 @@
 <template>
   <section id="osd-cover">
     <div
-      class="bottom-[100%] bg-[url('/assets/images/img-bg-2.jpg')] w-full h-[100svh] bg-cover absolute z-10 max-w-[375px] flex flex-col justify-around items-center grayscale text-white"
+      class="bottom-[100%] bg-[url('/assets/images/img-bg-2.jpg')] w-full h-[100vh] bg-cover absolute z-10 max-w-[375px] flex flex-col justify-around items-center grayscale text-white"
     >
       <div class="text-center">
         <h4>Wedding Invitation</h4>
-        <!-- <h1 v-if="props.brides.length > 0" class="text-[40px] leading-none">Siska & Agesta</h1> -->
         <h1
           v-if="props.userInfo.weddingInfo.brides.length > 0"
           class="text-[40px] leading-none capitalize"
