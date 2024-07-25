@@ -1,27 +1,26 @@
 <template>
-  <section id="osd-cover">
-    <div
-      class="bottom-[100%] bg-[url('/assets/images/img-bg-2.jpg')] w-full h-[100vh] bg-cover absolute z-10 max-w-[375px] flex flex-col justify-around items-center grayscale text-white"
-    >
-      <div class="text-center">
-        <h4>Wedding Invitation</h4>
-        <h1
-          v-if="props.userInfo.weddingInfo.brides.length > 0"
-          class="text-[40px] leading-none capitalize"
-        >
-          {{ props.userInfo.weddingInfo.brides[0] }} &
-          {{ props.userInfo.weddingInfo.brides[1] }}
-        </h1>
-        <h4>{{ props.userInfo.weddingInfo.date }}</h4>
-      </div>
-      <div>
-        <button
-          class="rounded-full bg-white px-4 py-1 pb-2 text-black shadow-md"
-          @click="handleButtonBukaUndangan('out')"
-        >
-          Buka undangan
-        </button>
-      </div>
+  <section
+    id="osd-cover"
+    class="bottom-[100%] bg-[url('/assets/images/img-bg-2.jpg')] min-w-[350px] w-[100vw] max-w-[480px] h-[100vh] bg-cover absolute z-10 flex flex-col justify-around items-center grayscale text-white"
+  >
+    <div class="text-center">
+      <h4>{{ state.title }}</h4>
+      <h1
+        v-if="props.userInfo.weddingInfo.brides.length > 0"
+        class="text-[40px] leading-none capitalize"
+      >
+        {{ props.userInfo.weddingInfo.brides[0] }} &
+        {{ props.userInfo.weddingInfo.brides[1] }}
+      </h1>
+      <h4>{{ props.userInfo.weddingInfo.date }}</h4>
+    </div>
+    <div>
+      <button
+        class="rounded-full bg-white px-4 py-1 pb-2 text-black shadow-md"
+        @click="handleButtonBukaUndangan('out')"
+      >
+        {{ state.button }}
+      </button>
     </div>
   </section>
 </template>
@@ -35,7 +34,6 @@ const props = defineProps({
   },
 })
 const emit = defineEmits(['handle-animation-osd-cover'])
-const { $anime } = useNuxtApp()
 
 interface UserInfo {
   profile: {
@@ -54,6 +52,12 @@ interface UserInfo {
     }
   }
 }
+
+const { $anime } = useNuxtApp()
+const state = reactive({
+  title: 'Wedding Invitation',
+  button: 'Buka undangan',
+})
 
 function handleButtonBukaUndangan(type: 'in' | 'out') {
   $anime({

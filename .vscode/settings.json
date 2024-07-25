@@ -14,8 +14,8 @@
     "html",
     "typescript",
     "typescriptreact"
-  ]
-
+  ],
+  "prettier.printWidth": 80
   // Default formatter
 
   // Prettier settings

@@ -14,6 +14,6 @@ export default defineNuxtConfig({
     strict: true,
     noImplicitAny: true,
   },
-  plugins: ['~/plugins/vueperslides.ts'],
+  plugins: ['~/plugins/vueperslides.ts', '~/plugins/dompurify-html.ts'],
   modules: ['@hypernym/nuxt-anime', '@morev/vue-transitions/nuxt'],
 })
