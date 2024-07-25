@@ -1,5 +1,5 @@
 <template>
-  <section class="p-8 text-center bg-white text-black">
+  <section class="px-10 py-[100px] text-center bg-white text-black">
     <h3 class="text-2xl">{{ state.title }}</h3>
     <hr class="mx-auto mt-3 mb-6 w-[50%] border-t-1 border-black" />
     <div class="text-xs" v-dompurify-html="state.desc"></div>
