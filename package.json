@@ -16,6 +16,7 @@
     "@morev/vue-transitions": "^3.0.2",
     "nuxt": "^3.12.4",
     "vue": "latest",
+    "vue-dompurify-html": "^5.1.0",
     "vueperslides": "^3.5.1"
   },
   "devDependencies": {
