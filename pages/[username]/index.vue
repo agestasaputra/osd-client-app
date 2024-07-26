@@ -88,6 +88,7 @@ async function fetchUserInfo() {
       'https://api.restful-api.dev/objects',
       {
         method: 'GET',
+        timeout: 3000,
       },
     )
     const res = {
@@ -124,6 +125,38 @@ async function fetchUserInfo() {
     console.log('response:', response)
   } catch (error) {
     console.log(error)
+    const res = {
+      profile: {
+        name: 'Agesta',
+        email: 'asd@asd.com',
+      },
+      package: {
+        name: 'design-two',
+      },
+      weddingInfo: {
+        brides: [],
+        akad: {
+          date: '2024/08/25',
+          time: '13:00',
+        },
+        reception: {
+          date: '2024/08/25',
+          time: '15:00',
+        },
+        endTime: {
+          date: '2024/08/25',
+          time: '17:00',
+        },
+        location: {
+          name: `Masjid Jami' Al-Falaah`,
+          address: `Jl. Aup Bar RT 03/ RW 10 Pasar Minggu,
+          Pasar Minggu, Jakarta Selatan, DKI Jakarta 12540`,
+        },
+      },
+    }
+    handleAssignBrides(res)
+    userInfo.value = res
+    console.log('res:', res)
   }
 }
 function handleAssignBrides(res: UserInfo) {

@@ -57,7 +57,10 @@ const state = reactive({
   title: 'Invitation',
   desc: `
     <p style="font-size: 22px">السلام عليكم ورحمة الله وبركاته</p>
-    <p style="font-size: 12px"> We are inviting you to celebrate the day when we take our next large step in the relationship. We promise you that the wedding will be magnificent. We would be incredibly grateful if you came to celebrate our love together with us! </p>
+    <p style="font-size: 12px"> We are inviting you to celebrate the day when
+    we take our next large step in the relationship. We promise you that
+    the wedding will be magnificent. We would be incredibly grateful
+    if you came to celebrate our love together with us! </p>
     <br />
     <br />
     <br />

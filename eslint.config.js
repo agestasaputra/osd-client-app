@@ -44,6 +44,13 @@ export default tseslint.config(
       },
     },
     rules: {
+      'max-len': [
+        'error',
+        {
+          code: 100,
+          ignoreUrls: true,
+        },
+      ],
       'no-undef': 'off',
       'no-console': 'warn',
       '@typescript-eslint/no-unsafe-call': 'off',
