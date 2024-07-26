@@ -4,19 +4,19 @@
       :user-info="props.userInfo"
       @handle-animation-osd-cover="handleAnimationOsdCover"
     />
-    <transition-fade :duration="3000" :delay="1000">
+    <transition-fade :duration="3000" :delay="1500">
       <DesignTwoBannerComponent
         v-if="isContentVisible"
         :user-info="props.userInfo"
       />
     </transition-fade>
-    <transition-fade :duration="3000" :delay="1000">
+    <transition-fade :duration="3000" :delay="1500">
       <DesignTwoInvitationComponent
         v-if="isContentVisible"
         :user-info="props.userInfo"
       />
     </transition-fade>
-    <transition-fade :duration="3000" :delay="1000">
+    <transition-fade :duration="3000" :delay="1500">
       <DesignTwoCounterComponent
         v-if="isContentVisible"
         :user-info="props.userInfo"
@@ -84,7 +84,7 @@ function handleAnimationOsdCover(type: 'in' | 'out') {
     targets: '#osd-cover',
     translateY: type === 'in' ? '100vh' : '0vh',
     duration: 1000,
-    easing: 'easeInOutExpo',
+    easing: 'easeInOutSine',
   })
   isContentVisible.value = type === 'in' ? false : true
 }

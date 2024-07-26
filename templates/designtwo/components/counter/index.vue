@@ -75,10 +75,13 @@ interface UserInfo {
 
 const state = reactive({
   title: 'Count The Date',
-  desc: `What counts in making a happy marriage is not so much how compatible you are, but how you deal with incompatibility. A great marriage is not when the perfect couple comes together. It is when an imperfect couple learns to enjoy their differences.`,
+  desc: `What counts in making a happy marriage is not so much 
+  how compatible you are, but how you deal with incompatibility. 
+  A great marriage is not when the perfect couple comes together.
+  It is when an imperfect couple learns to enjoy their differences.`,
   button: {
     name: 'Save the date',
-    link: `https://calendar.google.com/calendar/render?action=TEMPLATE&text=Wedding+Day+(${props.userInfo.weddingInfo.brides[0]}+%26+${props.userInfo.weddingInfo.brides[1]})&dates=${props.userInfo.weddingInfo.akad.date.replaceAll('/', '')}T${convertTimeToUTC7(props.userInfo.weddingInfo.akad.time)}00Z/${props.userInfo.weddingInfo.akad.date.replaceAll('/', '')}T${convertTimeToUTC7(props.userInfo.weddingInfo.endTime.time)}00Z&details=Merayakan+pernikahan+${props.userInfo.weddingInfo.brides[0]}+dan+${props.userInfo.weddingInfo.brides[1]}&location=Jl.+Kebahagiaan+No.123,+Jakarta`,
+    link: `https://calendar.google.com/calendar/render?action=TEMPLATE&text=Wedding+Day+(${props.userInfo.weddingInfo.brides[0]}+%26+${props.userInfo.weddingInfo.brides[1]})&dates=${props.userInfo.weddingInfo.akad.date.replaceAll('/', '')}T${convertTimeToUTC7(props.userInfo.weddingInfo.akad.date, props.userInfo.weddingInfo.akad.time).time.replaceAll(':', '')}00Z/${props.userInfo.weddingInfo.akad.date.replaceAll('/', '')}T${convertTimeToUTC7(props.userInfo.weddingInfo.endTime.date, props.userInfo.weddingInfo.endTime.time).time.replaceAll(':', '')}00Z&details=Merayakan+pernikahan+${props.userInfo.weddingInfo.brides[0]}+dan+${props.userInfo.weddingInfo.brides[1]}&location=Jl.+Kebahagiaan+No.123,+Jakarta`,
   },
 })
 
@@ -101,13 +104,33 @@ const time = computed(() => {
   }
 })
 
-function convertTimeToUTC7(time: string) {
-  const [hours, minutes] = time.split(':')
-  const date = new Date()
-  date.setUTCHours(+hours)
-  date.setUTCMinutes(+minutes)
-  date.setHours(date.getHours() + 7)
-  return date
+onMounted(() => {
+  convertTimeToUTC7(
+    props.userInfo.weddingInfo.akad.date,
+    props.userInfo.weddingInfo.akad.time,
+  )
+})
+
+function convertTimeToUTC7(date: string, time: string) {
+  // convert date to UTC-7, because the date and time is in UTC+7
+  const targetDay = new Date(`${date} ${time}`)
+  targetDay.setHours(targetDay.getHours() - 7)
+
+  // get new date from targetDay (YYYY/MM/DD)
+  const newYear = targetDay.getFullYear()
+  const newMonth = (targetDay.getMonth() + 1).toString().padStart(2, '0')
+  const newDate = targetDay.getDate().toString().padStart(2, '0')
+  const newFullDate = `${String(newYear)}/${String(newMonth)}/${String(newDate)}`
+
+  // get new time from targetDay (HH:MM)
+  const newHours = targetDay.getHours().toString().padStart(2, '0')
+  const newMinutes = targetDay.getMinutes().toString().padStart(2, '0')
+  const newFullTime = `${String(newHours)}:${String(newMinutes)}`
+
+  return {
+    date: newFullDate,
+    time: newFullTime,
+  }
 }
 </script>
 

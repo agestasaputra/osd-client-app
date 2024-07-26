@@ -1,13 +1,13 @@
 <template>
   <section
     id="osd-cover"
-    class="bottom-[100%] bg-[url('/assets/images/img-bg-2.jpg')] min-w-[350px] w-[100vw] max-w-[480px] h-[100vh] bg-cover absolute z-10 flex flex-col justify-around items-center grayscale text-white"
+    class="absolute bottom-[100%] z-10 flex h-[100vh] w-[100vw] min-w-[350px] max-w-[480px] flex-col items-center justify-around bg-[url('/assets/images/img-bg-2.jpg')] bg-cover text-white grayscale"
   >
     <div class="text-center">
       <h4>{{ state.title }}</h4>
       <h1
         v-if="props.userInfo.weddingInfo.brides.length > 0"
-        class="text-[40px] leading-none capitalize"
+        class="text-[40px] capitalize leading-none"
       >
         {{ props.userInfo.weddingInfo.brides[0] }} &
         {{ props.userInfo.weddingInfo.brides[1] }}
@@ -91,8 +91,8 @@ function handleButtonBukaUndangan(type: 'in' | 'out') {
   $anime({
     targets: '#osd-cover',
     translateY: type === 'in' ? '100vh' : '0vh',
-    duration: 800,
-    easing: 'easeInOutExpo',
+    duration: 1000,
+    easing: 'easeInOutSine',
   })
   emit('handle-animation-osd-cover', 'out')
 }
