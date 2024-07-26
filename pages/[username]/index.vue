@@ -43,7 +43,18 @@ interface UserInfo {
   }
   weddingInfo: {
     brides: string[]
-    date: string
+    akad: {
+      date: string // YYYY/MM/DD
+      time: string // HH:MM
+    }
+    reception: {
+      date: string // YYYY/MM/DD
+      time: string // HH:MM
+    }
+    endTime: {
+      date: string // YYYY/MM/DD
+      time: string // HH:MM
+    }
     location: {
       name: string
       address: string
@@ -89,7 +100,18 @@ async function fetchUserInfo() {
       },
       weddingInfo: {
         brides: [],
-        date: '12/11/2021',
+        akad: {
+          date: '2024/08/25',
+          time: '13:00',
+        },
+        reception: {
+          date: '2024/08/25',
+          time: '15:00',
+        },
+        endTime: {
+          date: '2024/08/25',
+          time: '17:00',
+        },
         location: {
           name: `Masjid Jami' Al-Falaah`,
           address: `Jl. Aup Bar RT 03/ RW 10 Pasar Minggu Pasar Minggu, Jakarta Selatan, DKI Jakarta 12540`,

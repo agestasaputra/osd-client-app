@@ -12,7 +12,7 @@
         {{ props.userInfo.weddingInfo.brides[0] }} &
         {{ props.userInfo.weddingInfo.brides[1] }}
       </h1>
-      <h4>{{ props.userInfo.weddingInfo.date }}</h4>
+      <h4>{{ date }}</h4>
     </div>
     <div>
       <button
@@ -45,7 +45,18 @@ interface UserInfo {
   }
   weddingInfo: {
     brides: string[]
-    date: string
+    akad: {
+      date: string // YYYY/MM/DD
+      time: string // HH:MM
+    }
+    reception: {
+      date: string // YYYY/MM/DD
+      time: string // HH:MM
+    }
+    endTime: {
+      date: string // YYYY/MM/DD
+      time: string // HH:MM
+    }
     location: {
       name: string
       address: string
@@ -57,6 +68,23 @@ const { $anime } = useNuxtApp()
 const state = reactive({
   title: 'Wedding Invitation',
   button: 'Buka undangan',
+})
+
+const date = computed(() => {
+  try {
+    const akadDate = new Date(props.userInfo.weddingInfo.akad.date)
+    const options: Intl.DateTimeFormatOptions = {
+      weekday: 'long',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    }
+    const result = akadDate.toLocaleDateString('id-ID', options)
+    return result
+  } catch (error) {
+    console.error('Error:', error)
+    return 0
+  }
 })
 
 function handleButtonBukaUndangan(type: 'in' | 'out') {

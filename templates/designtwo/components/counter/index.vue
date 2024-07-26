@@ -3,29 +3,35 @@
     <h3 class="text-2xl">{{ state.title }}</h3>
     <hr class="mx-auto mt-3 mb-6 w-[50%] border-t-1 border-black" />
     <div class="text-xs" v-dompurify-html="state.desc"></div>
-    <div class="flex my-8">
+    <vue-countdown
+      :time="time"
+      v-slot="{ days, hours, minutes, seconds }"
+      class="flex my-8"
+    >
       <div class="flex-1 border-r-2 border-gray-400">
-        <p class="text-3xl">{{ state.countdown.days }}</p>
+        <p class="text-3xl">{{ days }}</p>
         <p class="text-xs">Days</p>
       </div>
       <div class="flex-1 border-r-2 border-gray-400">
-        <p class="text-3xl">{{ state.countdown.hours }}</p>
+        <p class="text-3xl">{{ hours }}</p>
         <p class="text-xs">Hours</p>
       </div>
       <div class="flex-1 border-r-2 border-gray-400">
-        <p class="text-3xl">{{ state.countdown.minutes }}</p>
+        <p class="text-3xl">{{ minutes }}</p>
         <p class="text-xs">Minutes</p>
       </div>
       <div class="flex-1">
-        <p class="text-3xl">{{ state.countdown.seconds }}</p>
+        <p class="text-3xl">{{ seconds }}</p>
         <p class="text-xs">Seconds</p>
       </div>
-    </div>
-    <button
-      class="rounded-full bg-black px-4 py-2 pb-2 text-white shadow-md text-xs"
-    >
-      {{ state.button }}
-    </button>
+    </vue-countdown>
+    <nuxt-link :to="state.button.link" target="_blank">
+      <button
+        class="rounded-full bg-black px-4 py-2 pb-2 text-white shadow-md text-xs"
+      >
+        {{ state.button.name }}
+      </button>
+    </nuxt-link>
   </section>
 </template>
 
@@ -48,7 +54,18 @@ interface UserInfo {
   }
   weddingInfo: {
     brides: string[]
-    date: string
+    akad: {
+      date: string // YYYY/MM/DD
+      time: string // HH:MM
+    }
+    reception: {
+      date: string // YYYY/MM/DD
+      time: string // HH:MM
+    }
+    endTime: {
+      date: string // YYYY/MM/DD
+      time: string // HH:MM
+    }
     location: {
       name: string
       address: string
@@ -59,14 +76,39 @@ interface UserInfo {
 const state = reactive({
   title: 'Count The Date',
   desc: `What counts in making a happy marriage is not so much how compatible you are, but how you deal with incompatibility. A great marriage is not when the perfect couple comes together. It is when an imperfect couple learns to enjoy their differences.`,
-  countdown: {
-    days: 1,
-    hours: 10,
-    minutes: 10,
-    seconds: 10,
+  button: {
+    name: 'Save the date',
+    link: `https://calendar.google.com/calendar/render?action=TEMPLATE&text=Wedding+Day+(${props.userInfo.weddingInfo.brides[0]}+%26+${props.userInfo.weddingInfo.brides[1]})&dates=${props.userInfo.weddingInfo.akad.date.replaceAll('/', '')}T${convertTimeToUTC7(props.userInfo.weddingInfo.akad.time)}00Z/${props.userInfo.weddingInfo.akad.date.replaceAll('/', '')}T${convertTimeToUTC7(props.userInfo.weddingInfo.endTime.time)}00Z&details=Merayakan+pernikahan+${props.userInfo.weddingInfo.brides[0]}+dan+${props.userInfo.weddingInfo.brides[1]}&location=Jl.+Kebahagiaan+No.123,+Jakarta`,
   },
-  button: 'Save the date',
 })
+
+const time = computed(() => {
+  try {
+    const today = new Date()
+    const targetDayDate = new Date(props.userInfo.weddingInfo.akad.date)
+    const targetDayHours = props.userInfo.weddingInfo.akad.time
+
+    const targetDay = new Date(
+      targetDayDate.getFullYear(),
+      targetDayDate.getMonth(),
+      targetDayDate.getDate(),
+      +targetDayHours.split(':')[0],
+      +targetDayHours.split(':')[1],
+    )
+    return targetDay.getTime() - today.getTime() || null
+  } catch (err) {
+    console.log('err:', err)
+  }
+})
+
+function convertTimeToUTC7(time: string) {
+  const [hours, minutes] = time.split(':')
+  const date = new Date()
+  date.setUTCHours(+hours)
+  date.setUTCMinutes(+minutes)
+  date.setHours(date.getHours() + 7)
+  return date
+}
 </script>
 
 <style scoped></style>
