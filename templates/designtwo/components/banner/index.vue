@@ -56,23 +56,14 @@
           </h3>
         </div>
       </div>
-      <!-- <div>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-            <path
-              fill="#1D1D1D"
-              fill-opacity="1"
-              d="M0,224L80,202.7C160,181,320,139,480,138.7C640,139,800,181,960,181.3C1120,181,1280,139,1360,117.3L1440,96L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"
-            ></path>
-          </svg>
-        </div> -->
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
-import imgBanner1 from '@/assets/images/img-banner-1.jpg'
-import imgBanner2 from '@/assets/images/img-banner-2.jpg'
-import imgBanner3 from '@/assets/images/img-banner-3.jpg'
+import imgBanner1 from '@/assets/images/img-banner-1-compressed.jpg'
+import imgBanner2 from '@/assets/images/img-banner-2-compressed.jpg'
+import imgBanner3 from '@/assets/images/img-banner-3-compressed.jpg'
 
 const props = defineProps({
   userInfo: {
