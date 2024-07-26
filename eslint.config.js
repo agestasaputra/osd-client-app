@@ -4,10 +4,10 @@ import vueParser from 'vue-eslint-parser'
 import globals from 'globals'
 // import eslintConfigPrettier from "eslint-config-prettier";
 
-const GLOBALS_BROWSER_FIX = Object.assign({}, globals.browser, {
-  AudioWorkletGlobalScope: globals.browser['AudioWorkletGlobalScope '],
-})
-delete GLOBALS_BROWSER_FIX['AudioWorkletGlobalScope ']
+// const GLOBALS_BROWSER_FIX = Object.assign({}, globals.browser, {
+//   AudioWorkletGlobalScope: globals.browser['AudioWorkletGlobalScope '],
+// })
+// delete GLOBALS_BROWSER_FIX['AudioWorkletGlobalScope ']
 
 export default tseslint.config(
   eslint.configs.recommended,
@@ -31,9 +31,10 @@ export default tseslint.config(
   },
   {
     languageOptions: {
-      globals: {
-        ...GLOBALS_BROWSER_FIX,
-      },
+      // globals: {
+      //   ...GLOBALS_BROWSER_FIX,
+      // },
+      globals: globals.browser,
       parser: vueParser,
       parserOptions: {
         parser: tseslint.parser,
@@ -43,6 +44,7 @@ export default tseslint.config(
       },
     },
     rules: {
+      'no-undef': 'off',
       'no-console': 'warn',
       '@typescript-eslint/no-unsafe-call': 'off',
       '@typescript-eslint/no-explicit-any': 'error',
