@@ -52,7 +52,7 @@
             class="bg-[#fff] w-full h-[2px] text-[#fff] inline-block flex-1"
           ></div>
           <h3 class="text-[14px] text-white ml-2">
-            {{ state.bannerText.date }}
+            {{ date }}
           </h3>
         </div>
       </div>
@@ -92,7 +92,18 @@ interface UserInfo {
   }
   weddingInfo: {
     brides: string[]
-    date: string
+    akad: {
+      date: string // YYYY/MM/DD
+      time: string // HH:MM
+    }
+    reception: {
+      date: string // YYYY/MM/DD
+      time: string // HH:MM
+    }
+    endTime: {
+      date: string // YYYY/MM/DD
+      time: string // HH:MM
+    }
     location: {
       name: string
       address: string
@@ -117,8 +128,24 @@ const state = reactive({
   ],
   bannerText: {
     title: 'The Wedding Of',
-    date: 'Minggu, 27 Desember 2024',
   },
+})
+
+const date = computed(() => {
+  try {
+    const akadDate = new Date(props.userInfo.weddingInfo.akad.date)
+    const options: Intl.DateTimeFormatOptions = {
+      weekday: 'long',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    }
+    const result = akadDate.toLocaleDateString('id-ID', options)
+    return result
+  } catch (error) {
+    console.error('Error:', error)
+    return 0
+  }
 })
 
 onMounted(() => {

@@ -51,7 +51,18 @@ interface UserInfo {
   }
   weddingInfo: {
     brides: string[]
-    date: string
+    akad: {
+      date: string // YYYY/MM/DD
+      time: string // HH:MM
+    }
+    reception: {
+      date: string // YYYY/MM/DD
+      time: string // HH:MM
+    }
+    endTime: {
+      date: string // YYYY/MM/DD
+      time: string // HH:MM
+    }
     location: {
       name: string
       address: string
