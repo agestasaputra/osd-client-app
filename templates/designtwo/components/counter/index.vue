@@ -1,12 +1,12 @@
 <template>
-  <section class="px-10 py-[100px] text-center bg-white text-black">
+  <section class="bg-white px-10 py-[100px] text-center text-black">
     <h3 class="text-2xl">{{ state.title }}</h3>
-    <hr class="mx-auto mt-3 mb-6 w-[50%] border-t-1 border-black" />
+    <hr class="border-t-1 mx-auto mb-6 mt-3 w-[50%] border-black" />
     <div class="text-xs" v-dompurify-html="state.desc"></div>
     <vue-countdown
       :time="time"
       v-slot="{ days, hours, minutes, seconds }"
-      class="flex my-8"
+      class="my-8 flex"
     >
       <div class="flex-1 border-r-2 border-gray-400">
         <p class="text-3xl">{{ days }}</p>
@@ -27,7 +27,7 @@
     </vue-countdown>
     <nuxt-link :to="state.button.link" target="_blank">
       <button
-        class="rounded-full bg-black px-4 py-2 pb-2 text-white shadow-md text-xs"
+        class="rounded-full bg-black px-4 py-2 pb-2 text-xs text-white shadow-md"
       >
         {{ state.button.name }}
       </button>
@@ -36,6 +36,8 @@
 </template>
 
 <script setup lang="ts">
+import type { UserInfo } from '~/shared/interfaces.ts'
+
 const props = defineProps({
   userInfo: {
     type: Object as PropType<UserInfo>,
@@ -43,35 +45,6 @@ const props = defineProps({
     required: true,
   },
 })
-
-interface UserInfo {
-  profile: {
-    name: string
-    email: string
-  }
-  package: {
-    name: string
-  }
-  weddingInfo: {
-    brides: string[]
-    akad: {
-      date: string // YYYY/MM/DD
-      time: string // HH:MM
-    }
-    reception: {
-      date: string // YYYY/MM/DD
-      time: string // HH:MM
-    }
-    endTime: {
-      date: string // YYYY/MM/DD
-      time: string // HH:MM
-    }
-    location: {
-      name: string
-      address: string
-    }
-  }
-}
 
 const state = reactive({
   title: 'Count The Date',
