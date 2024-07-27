@@ -10,12 +10,14 @@
         </svg>
       </div> -->
     <h3 class="text-2xl">{{ state.title }}</h3>
-    <hr class="mx-auto mt-3 mb-6 w-[50%] border-t-1 border-white" />
+    <hr class="border-t-1 mx-auto mb-6 mt-3 w-[50%] border-white" />
     <div v-dompurify-html="state.desc"></div>
   </section>
 </template>
 
 <script setup lang="ts">
+import type { UserInfo } from '~/shared/interfaces.ts'
+
 const props = defineProps({
   userInfo: {
     type: Object as PropType<UserInfo>,
@@ -23,35 +25,6 @@ const props = defineProps({
     required: true,
   },
 })
-
-interface UserInfo {
-  profile: {
-    name: string
-    email: string
-  }
-  package: {
-    name: string
-  }
-  weddingInfo: {
-    brides: string[]
-    akad: {
-      date: string // YYYY/MM/DD
-      time: string // HH:MM
-    }
-    reception: {
-      date: string // YYYY/MM/DD
-      time: string // HH:MM
-    }
-    endTime: {
-      date: string // YYYY/MM/DD
-      time: string // HH:MM
-    }
-    location: {
-      name: string
-      address: string
-    }
-  }
-}
 
 const state = reactive({
   title: 'Invitation',

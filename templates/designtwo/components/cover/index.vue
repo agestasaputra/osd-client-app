@@ -26,6 +26,8 @@
 </template>
 
 <script setup lang="ts">
+import type { UserInfo } from '~/shared/interfaces.ts'
+
 const props = defineProps({
   userInfo: {
     type: Object as PropType<UserInfo>,
@@ -34,35 +36,6 @@ const props = defineProps({
   },
 })
 const emit = defineEmits(['handle-animation-osd-cover'])
-
-interface UserInfo {
-  profile: {
-    name: string
-    email: string
-  }
-  package: {
-    name: string
-  }
-  weddingInfo: {
-    brides: string[]
-    akad: {
-      date: string // YYYY/MM/DD
-      time: string // HH:MM
-    }
-    reception: {
-      date: string // YYYY/MM/DD
-      time: string // HH:MM
-    }
-    endTime: {
-      date: string // YYYY/MM/DD
-      time: string // HH:MM
-    }
-    location: {
-      name: string
-      address: string
-    }
-  }
-}
 
 const { $anime } = useNuxtApp()
 const state = reactive({
@@ -83,7 +56,7 @@ const date = computed(() => {
     return result
   } catch (error) {
     console.error('Error:', error)
-    return 0
+    return
   }
 })
 

@@ -1,7 +1,7 @@
 <template>
   <div
     :class="{
-      'min-h-[100vh] h-fit': true,
+      'h-fit min-h-[100vh]': true,
       'bg-neutral-900 text-white':
         userInfo && userInfo.package.name === 'design-two',
     }"
@@ -11,7 +11,7 @@
     </template>
     <template v-if="!isLoading">
       <div
-        class="mobile-wrapper min-w-[350px] w-[100vw] max-w-[480px] mx-auto shadow-inner"
+        class="mobile-wrapper mx-auto w-[100vw] min-w-[350px] max-w-[480px] shadow-inner"
       >
         <DesignOne
           v-if="userInfo && userInfo.package.name === 'design-one'"
@@ -32,35 +32,7 @@ import DesignOne from '~/templates/designone/index.vue'
 import DesignTwo from '~/templates/designtwo/index.vue'
 import { $fetch } from 'ofetch'
 import { useRoute } from 'vue-router'
-
-interface UserInfo {
-  profile: {
-    name: string
-    email: string
-  }
-  package: {
-    name: string
-  }
-  weddingInfo: {
-    brides: string[]
-    akad: {
-      date: string // YYYY/MM/DD
-      time: string // HH:MM
-    }
-    reception: {
-      date: string // YYYY/MM/DD
-      time: string // HH:MM
-    }
-    endTime: {
-      date: string // YYYY/MM/DD
-      time: string // HH:MM
-    }
-    location: {
-      name: string
-      address: string
-    }
-  }
-}
+import type { UserInfo } from '~/shared/interfaces.ts'
 
 const isLoading = ref<boolean>(true)
 const userInfo = ref<UserInfo>()
@@ -115,7 +87,8 @@ async function fetchUserInfo() {
         },
         location: {
           name: `Masjid Jami' Al-Falaah`,
-          address: `Jl. Aup Bar RT 03/ RW 10 Pasar Minggu Pasar Minggu, Jakarta Selatan, DKI Jakarta 12540`,
+          address: `Jl. Aup Bar RT 03/ RW 10 Pasar Minggu
+          Pasar Minggu, Jakarta Selatan, DKI Jakarta 12540`,
         },
       },
     }

@@ -28,30 +28,30 @@
     </div>
 
     <!-- BANNER TEXT -->
-    <div class="absolute min-w-[350px] w-[100vw] max-w-[480px] bottom-[-1px]">
-      <div class="text-right px-7 pb-6">
+    <div class="absolute bottom-[-1px] w-[100vw] min-w-[350px] max-w-[480px]">
+      <div class="px-7 pb-6 text-right">
         <div class="flex flex-row items-center">
           <div
-            class="bg-[#fff] w-full h-[2px] text-[#fff] inline-block flex-1"
+            class="inline-block h-[2px] w-full flex-1 bg-[#fff] text-[#fff]"
           ></div>
-          <h3 class="text-white ml-2">{{ state.bannerText.title }}</h3>
+          <h3 class="ml-2 text-white">{{ state.bannerText.title }}</h3>
         </div>
         <div
           v-if="props.userInfo.weddingInfo.brides.length > 0"
-          class="flex flex-col my-4"
+          class="my-4 flex flex-col"
         >
-          <h1 class="text-[60px] leading-none text-white uppercase shadow-sm">
+          <h1 class="text-[60px] uppercase leading-none text-white shadow-sm">
             {{ props.userInfo.weddingInfo.brides[0] }} &
           </h1>
-          <h1 class="text-[60px] leading-none text-white uppercase shadow-sm">
+          <h1 class="text-[60px] uppercase leading-none text-white shadow-sm">
             {{ props.userInfo.weddingInfo.brides[1] }}
           </h1>
         </div>
         <div class="flex flex-row items-center">
           <div
-            class="bg-[#fff] w-full h-[2px] text-[#fff] inline-block flex-1"
+            class="inline-block h-[2px] w-full flex-1 bg-[#fff] text-[#fff]"
           ></div>
-          <h3 class="text-[14px] text-white ml-2">
+          <h3 class="ml-2 text-[14px] text-white">
             {{ date }}
           </h3>
         </div>
@@ -64,6 +64,7 @@
 import imgBanner1 from '@/assets/images/img-banner-1-compressed.jpg'
 import imgBanner2 from '@/assets/images/img-banner-2-compressed.jpg'
 import imgBanner3 from '@/assets/images/img-banner-3-compressed.jpg'
+import type { UserInfo } from '~/shared/interfaces.ts'
 
 const props = defineProps({
   userInfo: {
@@ -72,35 +73,6 @@ const props = defineProps({
     required: true,
   },
 })
-
-interface UserInfo {
-  profile: {
-    name: string
-    email: string
-  }
-  package: {
-    name: string
-  }
-  weddingInfo: {
-    brides: string[]
-    akad: {
-      date: string // YYYY/MM/DD
-      time: string // HH:MM
-    }
-    reception: {
-      date: string // YYYY/MM/DD
-      time: string // HH:MM
-    }
-    endTime: {
-      date: string // YYYY/MM/DD
-      time: string // HH:MM
-    }
-    location: {
-      name: string
-      address: string
-    }
-  }
-}
 
 const state = reactive({
   slides: [
@@ -135,7 +107,7 @@ const date = computed(() => {
     return result
   } catch (error) {
     console.error('Error:', error)
-    return 0
+    return
   }
 })
 

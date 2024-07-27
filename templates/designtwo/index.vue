@@ -22,16 +22,24 @@
         :user-info="props.userInfo"
       />
     </transition-fade>
+    <transition-fade :duration="3000" :delay="1500">
+      <DesignTwoAboutUsComponent
+        v-if="isContentVisible"
+        :user-info="props.userInfo"
+      />
+    </transition-fade>
   </main>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue'
 import { onMounted } from 'vue'
+import type { UserInfo } from '~/shared/interfaces.ts'
 import DesignTwoCoverComponent from '~/templates/designtwo/components/cover/index.vue'
 import DesignTwoBannerComponent from '~/templates/designtwo/components/banner/index.vue'
 import DesignTwoInvitationComponent from '~/templates/designtwo/components/invitation/index.vue'
 import DesignTwoCounterComponent from '~/templates/designtwo/components/counter/index.vue'
+import DesignTwoAboutUsComponent from '~/templates/designtwo/components/about-us/index.vue'
 
 const props = defineProps({
   userInfo: {
@@ -40,35 +48,6 @@ const props = defineProps({
     required: true,
   },
 })
-
-interface UserInfo {
-  profile: {
-    name: string
-    email: string
-  }
-  package: {
-    name: string
-  }
-  weddingInfo: {
-    brides: string[]
-    akad: {
-      date: string // YYYY/MM/DD
-      time: string // HH:MM
-    }
-    reception: {
-      date: string // YYYY/MM/DD
-      time: string // HH:MM
-    }
-    endTime: {
-      date: string // YYYY/MM/DD
-      time: string // HH:MM
-    }
-    location: {
-      name: string
-      address: string
-    }
-  }
-}
 
 let isContentVisible = ref<boolean>(false)
 const { $anime } = useNuxtApp()
