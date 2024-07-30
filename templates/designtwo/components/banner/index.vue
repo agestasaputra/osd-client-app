@@ -66,6 +66,10 @@ import imgBanner2 from '@/assets/images/img-banner-2-compressed.jpg'
 import imgBanner3 from '@/assets/images/img-banner-3-compressed.jpg'
 import type { UserInfo } from '~/shared/interfaces.ts'
 
+defineOptions({
+  name: 'SectionBanner',
+})
+
 const props = defineProps({
   userInfo: {
     type: Object as PropType<UserInfo>,

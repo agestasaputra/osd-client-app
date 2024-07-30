@@ -9,6 +9,7 @@
       <div class="flex flex-col">
         <div
           :class="{
+            'border-8 border-stone-600': true,
             'z-[1]': true,
             'h-[350px]': true,
             'w-[250px]': true,
@@ -35,7 +36,7 @@
             'text-black': true,
           }"
         >
-          <p class="flex-1 text-left">The Bridges</p>
+          <p class="flex-1 text-right">The Bride</p>
         </div>
       </div>
       <div class="mt-12">
@@ -73,6 +74,7 @@
       <div class="flex flex-col items-end">
         <div
           :class="{
+            'border-8 border-stone-600': true,
             'z-[1]': true,
             'h-[350px]': true,
             'w-[250px]': true,
@@ -108,13 +110,13 @@
             class="my-3 text-3xl font-semibold"
             v-dompurify-html="state.groom.name"
           ></p>
-          <p class="text-sm">Putra Dari</p>
+          <p class="text-sm">{{ state.groom.desc[0] }}</p>
           <p
             class="text-sm font-semibold"
             v-dompurify-html="state.groom.father"
           ></p>
           <span class="inline text-sm"
-            >dan
+            >{{ state.groom.desc[1] }}
             <p
               class="inline text-sm font-semibold"
               v-dompurify-html="state.groom.mother"
@@ -136,6 +138,10 @@
 <script setup lang="ts">
 import type { UserInfo } from '~/shared/interfaces.ts'
 
+defineOptions({
+  name: 'SectionAboutUs',
+})
+
 const props = defineProps({
   userInfo: {
     type: Object as PropType<UserInfo>,
@@ -153,13 +159,17 @@ const state = reactive({
     pernikahan kami :</p>
   `,
   bride: {
+    title: 'The Bride',
     name: 'Siska Dwi Putri <br/> Yuliansyah',
+    desc: ['Putri dari', 'dan'],
     father: 'Bapak Fulan',
     mother: 'Ibu Fulan',
     instagram: 'https://www.instagram.com/siskadptr',
   },
   groom: {
+    title: 'The Groom',
     name: 'Agesta Budy <br/> Saputra',
+    desc: ['Putra dari', 'dan'],
     father: 'Bapak Thoriq',
     mother: 'Ibu Fuji',
     instagram: 'https://www.instagram.com/agestasaputra',

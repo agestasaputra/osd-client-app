@@ -34,6 +34,10 @@ import { $fetch } from 'ofetch'
 import { useRoute } from 'vue-router'
 import type { UserInfo } from '~/shared/interfaces.ts'
 
+defineOptions({
+  name: 'SectionUsername',
+})
+
 const isLoading = ref<boolean>(true)
 const userInfo = ref<UserInfo>()
 const hasQuery = ref<boolean>(false)
