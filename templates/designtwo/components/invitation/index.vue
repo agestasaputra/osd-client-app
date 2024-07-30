@@ -18,6 +18,10 @@
 <script setup lang="ts">
 import type { UserInfo } from '~/shared/interfaces.ts'
 
+defineOptions({
+  name: 'SectionInvitation',
+})
+
 const props = defineProps({
   userInfo: {
     type: Object as PropType<UserInfo>,

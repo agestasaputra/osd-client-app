@@ -28,6 +28,12 @@
         :user-info="props.userInfo"
       />
     </transition-fade>
+    <transition-fade :duration="3000" :delay="1500">
+      <DesignTwoArRumComponent
+        v-if="isContentVisible"
+        :user-info="props.userInfo"
+      />
+    </transition-fade>
   </main>
 </template>
 
@@ -40,6 +46,11 @@ import DesignTwoBannerComponent from '~/templates/designtwo/components/banner/in
 import DesignTwoInvitationComponent from '~/templates/designtwo/components/invitation/index.vue'
 import DesignTwoCounterComponent from '~/templates/designtwo/components/counter/index.vue'
 import DesignTwoAboutUsComponent from '~/templates/designtwo/components/about-us/index.vue'
+import DesignTwoArRumComponent from '~/templates/designtwo/components/ar-rum/index.vue'
+
+defineOptions({
+  name: 'SectionTemplateDesign',
+})
 
 const props = defineProps({
   userInfo: {

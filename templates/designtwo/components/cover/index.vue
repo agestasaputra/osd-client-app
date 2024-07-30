@@ -28,6 +28,10 @@
 <script setup lang="ts">
 import type { UserInfo } from '~/shared/interfaces.ts'
 
+defineOptions({
+  name: 'SectionCover',
+})
+
 const props = defineProps({
   userInfo: {
     type: Object as PropType<UserInfo>,
