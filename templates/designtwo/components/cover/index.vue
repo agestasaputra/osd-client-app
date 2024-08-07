@@ -1,7 +1,13 @@
 <template>
   <section
     id="osd-cover"
-    class="absolute bottom-[100%] z-10 flex h-[100vh] w-[100vw] min-w-[350px] max-w-[480px] flex-col items-center justify-around bg-[url('/assets/images/img-bg-2.jpg')] bg-cover text-white grayscale"
+    :class="{
+      'absolute z-10 flex h-[100vh]': true,
+      'w-[100vw] min-w-[350px] max-w-[480px]': true,
+      'flex-col items-center justify-around': true,
+      'bg-[url(\'/assets/images/img-bg-2.jpg\')]': true,
+      'bg-cover text-white grayscale': true,
+    }"
   >
     <div class="text-center">
       <h4>{{ state.title }}</h4>
@@ -17,7 +23,7 @@
     <div>
       <button
         class="rounded-full bg-white px-4 py-1 pb-2 text-black shadow-md"
-        @click="handleButtonBukaUndangan('out')"
+        @click="handleButtonBukaUndangan"
       >
         {{ state.button }}
       </button>
@@ -41,7 +47,6 @@ const props = defineProps({
 })
 const emit = defineEmits(['handle-animation-osd-cover'])
 
-const { $anime } = useNuxtApp()
 const state = reactive({
   title: 'Wedding Invitation',
   button: 'Buka undangan',
@@ -64,13 +69,7 @@ const date = computed(() => {
   }
 })
 
-function handleButtonBukaUndangan(type: 'in' | 'out') {
-  $anime({
-    targets: '#osd-cover',
-    translateY: type === 'in' ? '100vh' : '0vh',
-    duration: 1000,
-    easing: 'easeInOutSine',
-  })
+function handleButtonBukaUndangan() {
   emit('handle-animation-osd-cover', 'out')
 }
 </script>
