@@ -1,35 +1,44 @@
 <template>
   <main class="w-full">
-    <DesignTwoCoverComponent
-      :user-info="props.userInfo"
-      @handle-animation-osd-cover="handleAnimationOsdCover"
-    />
-    <transition-fade :duration="3000" :delay="1500">
+    <transition-fade :duration="5000" :delay="500">
+      <DesignTwoCoverComponent
+        v-if="isCoverVisible"
+        :user-info="props.userInfo"
+        @handle-animation-osd-cover="handleAnimationOsdCover"
+      />
+    </transition-fade>
+    <transition-fade :duration="3000" :delay="2000">
       <DesignTwoBannerComponent
         v-if="isContentVisible"
         :user-info="props.userInfo"
       />
     </transition-fade>
-    <transition-fade :duration="3000" :delay="1500">
+    <transition-fade :duration="3000" :delay="2000">
       <DesignTwoInvitationComponent
         v-if="isContentVisible"
         :user-info="props.userInfo"
       />
     </transition-fade>
-    <transition-fade :duration="3000" :delay="1500">
+    <transition-fade :duration="3000" :delay="2000">
       <DesignTwoCounterComponent
         v-if="isContentVisible"
         :user-info="props.userInfo"
       />
     </transition-fade>
-    <transition-fade :duration="3000" :delay="1500">
+    <transition-fade :duration="3000" :delay="2000">
       <DesignTwoAboutUsComponent
         v-if="isContentVisible"
         :user-info="props.userInfo"
       />
     </transition-fade>
-    <transition-fade :duration="3000" :delay="1500">
+    <transition-fade :duration="3000" :delay="2000">
       <DesignTwoArRumComponent
+        v-if="isContentVisible"
+        :user-info="props.userInfo"
+      />
+    </transition-fade>
+    <transition-fade :duration="3000" :delay="2000">
+      <DesignTwoEventDetailComponent
         v-if="isContentVisible"
         :user-info="props.userInfo"
       />
@@ -47,6 +56,7 @@ import DesignTwoInvitationComponent from '~/templates/designtwo/components/invit
 import DesignTwoCounterComponent from '~/templates/designtwo/components/counter/index.vue'
 import DesignTwoAboutUsComponent from '~/templates/designtwo/components/about-us/index.vue'
 import DesignTwoArRumComponent from '~/templates/designtwo/components/ar-rum/index.vue'
+import DesignTwoEventDetailComponent from '~/templates/designtwo/components/event-detail/index.vue'
 
 defineOptions({
   name: 'SectionTemplateDesign',
@@ -60,23 +70,24 @@ const props = defineProps({
   },
 })
 
+let isCoverVisible = ref<boolean>(false)
 let isContentVisible = ref<boolean>(false)
 const { $anime } = useNuxtApp()
 
 onMounted(() => {
   setTimeout(() => {
-    handleAnimationOsdCover('in')
-  }, 1)
+    isCoverVisible.value = true
+  }, 10)
 })
 
-function handleAnimationOsdCover(type: 'in' | 'out') {
+function handleAnimationOsdCover() {
   $anime({
     targets: '#osd-cover',
-    translateY: type === 'in' ? '100vh' : '0vh',
-    duration: 1000,
+    translateY: '-100vh',
+    duration: 2000,
     easing: 'easeInOutSine',
   })
-  isContentVisible.value = type === 'in' ? false : true
+  isContentVisible.value = true
 }
 </script>
 

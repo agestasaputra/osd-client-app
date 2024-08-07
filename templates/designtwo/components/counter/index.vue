@@ -77,7 +77,7 @@ const time = computed(() => {
     )
     return targetDay.getTime() - today.getTime() || null
   } catch (err) {
-    console.log('err:', err)
+    console.error('Error:', err)
   }
 })
 
