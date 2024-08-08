@@ -4,12 +4,12 @@
     <hr class="border-t-1 mx-auto mb-6 mt-3 w-[50%] border-black" />
 
     <div class="flex h-fit w-fit">
-      <div class="mr-8 w-5 rounded-xl bg-neutral-800"></div>
+      <div class="mr-8 w-5 rounded-xl bg-zinc-800"></div>
       <div>
         <div
           v-for="(item, key) in props.userInfo.weddingInfo.loveStory"
           :key="key"
-          class="mb-8 rounded-lg bg-neutral-800 pb-6 text-white"
+          class="mb-8 rounded-lg bg-zinc-800 pb-6 text-white"
         >
           <!-- Triangle icon  -->
           <!-- License: MIT. Made by radix-ui: https://github.com/radix-ui/icons -->
@@ -34,7 +34,7 @@
             <IconCalendarHeart :size="25" color="black" />
           </div>
           <!-- <div
-            class="absolute ml-[-55px] mt-1 h-fit w-fit rounded-full bg-neutral-800 p-[6px]"
+            class="absolute ml-[-55px] mt-1 h-fit w-fit rounded-full bg-zinc-800 p-[6px]"
           >
             <IconCalendarHeart :size="25" color="#b5a272" />
           </div> -->
@@ -47,9 +47,9 @@
               />
             </div>
           </div>
-          <div class="p-4 text-right">
-            <h5 class="mb-2 text-3xl">{{ item.title }}</h5>
-            <p class="text-sm">{{ item.desc }}</p>
+          <div class="p-4 text-left">
+            <h5 class="mb-2 text-xl">{{ item.title }}</h5>
+            <p class="text-xs">{{ item.desc }}</p>
           </div>
         </div>
       </div>

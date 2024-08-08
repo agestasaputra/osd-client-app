@@ -2,7 +2,7 @@
   <div
     :class="{
       'h-fit min-h-[100vh]': true,
-      'bg-neutral-900 text-white':
+      'bg-neutral-950 text-white':
         userInfo && userInfo.package.name === 'design-two',
     }"
   >

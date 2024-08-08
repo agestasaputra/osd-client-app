@@ -1,5 +1,5 @@
 <template>
-  <section class="px-10 py-[100px] text-center">
+  <section class="bg-zinc-900 px-10 py-[100px] text-center">
     <h3 class="text-2xl">{{ state.title }}</h3>
     <hr class="border-t-1 mx-auto mb-6 mt-3 w-[50%] border-white" />
     <div v-dompurify-html="state.desc"></div>
@@ -59,7 +59,7 @@
           </span>
           <nuxt-link :to="state.bride.instagram" target="_blank" class="mt-2">
             <button
-              class="h-[30px] rounded-md bg-[#b5a272] px-3 pb-1 text-xs text-white shadow-md"
+              class="h-[30px] rounded-md bg-[#b5a272] px-3 pb-1 text-sm text-zinc-900 shadow-md"
             >
               Instagram
             </button>
@@ -124,7 +124,7 @@
           </span>
           <nuxt-link :to="state.groom.instagram" target="_blank" class="mt-2">
             <button
-              class="h-[30px] rounded-md bg-[#b5a272] px-3 pb-1 text-xs text-white shadow-md"
+              class="h-[30px] rounded-md bg-[#b5a272] px-3 pb-1 text-sm text-zinc-900 shadow-md"
             >
               Instagram
             </button>

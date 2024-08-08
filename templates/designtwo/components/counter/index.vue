@@ -27,7 +27,7 @@
     </vue-countdown>
     <nuxt-link :to="state.button.link" target="_blank">
       <button
-        class="rounded-full bg-black px-4 py-2 pb-2 text-xs text-white shadow-md"
+        class="rounded-full bg-zinc-900 px-4 py-2 pb-2 text-xs text-white shadow-md"
       >
         {{ state.button.name }}
       </button>
@@ -77,6 +77,7 @@ const time = computed(() => {
     )
     return targetDay.getTime() - today.getTime() || null
   } catch (err) {
+    // eslint-disable-next-line no-console
     console.error('Error:', err)
   }
 })
