@@ -5,9 +5,9 @@
       'absolute z-10 flex h-[100vh]': true,
       'w-[100vw] min-w-[350px] max-w-[480px]': true,
       'flex-col items-center justify-around': true,
-      'bg-[url(\'/assets/images/img-bg-2.jpg\')]': true,
       'bg-cover text-white grayscale': true,
     }"
+    class="bg-[url('/assets/images/img-bg-2.jpg')]"
   >
     <div class="text-center">
       <h4>{{ state.title }}</h4>
@@ -64,6 +64,7 @@ const date = computed(() => {
     const result = akadDate.toLocaleDateString('id-ID', options)
     return result
   } catch (error) {
+    // eslint-disable-next-line no-console
     console.error('Error:', error)
     return
   }

@@ -43,6 +43,12 @@
         :user-info="props.userInfo"
       />
     </transition-fade>
+    <transition-fade :duration="3000" :delay="2000">
+      <DesignTwoLoveStoryComponent
+        v-if="isContentVisible"
+        :user-info="props.userInfo"
+      />
+    </transition-fade>
   </main>
 </template>
 
@@ -57,6 +63,7 @@ import DesignTwoCounterComponent from '~/templates/designtwo/components/counter/
 import DesignTwoAboutUsComponent from '~/templates/designtwo/components/about-us/index.vue'
 import DesignTwoArRumComponent from '~/templates/designtwo/components/ar-rum/index.vue'
 import DesignTwoEventDetailComponent from '~/templates/designtwo/components/event-detail/index.vue'
+import DesignTwoLoveStoryComponent from '~/templates/designtwo/components/love-story/index.vue'
 
 defineOptions({
   name: 'SectionTemplateDesign',

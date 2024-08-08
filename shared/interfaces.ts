@@ -1,4 +1,11 @@
-export interface UserInfo {
+interface loveStoryItem {
+  date: string
+  image: string
+  title: string
+  desc: string
+}
+
+interface UserInfo {
   profile: {
     name: string
     email: string
@@ -11,18 +18,27 @@ export interface UserInfo {
     akad: {
       date: string // YYYY/MM/DD
       time: string // HH:MM
+      location: {
+        name: string
+        address: string
+        maps: string
+      }
     }
     reception: {
       date: string // YYYY/MM/DD
       time: string // HH:MM
+      location: {
+        name: string
+        address: string
+        maps: string
+      }
     }
     endTime: {
       date: string // YYYY/MM/DD
       time: string // HH:MM
     }
-    location: {
-      name: string
-      address: string
-    }
+    loveStory: loveStoryItem[]
   }
 }
+
+export type { loveStoryItem, UserInfo }
