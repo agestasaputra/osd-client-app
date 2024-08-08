@@ -16,7 +16,7 @@
         <h4 class="text-2xl">Akad Nikah</h4>
         <div class="my-6 flex h-[100px]">
           <div class="flex h-full w-[33.3%] flex-col justify-center px-2">
-            <p class="text-xl font-semibold uppercase">
+            <p class="text-2xl font-semibold uppercase">
               {{ getMonth(props.userInfo.weddingInfo.akad.date).shortMonth }}
             </p>
           </div>
@@ -37,19 +37,30 @@
             </p>
           </div>
           <div class="flex h-full w-[33.3%] flex-col justify-center px-2">
-            <p class="text-xl font-semibold">
+            <p class="text-2xl font-semibold">
               {{ new Date(props.userInfo.weddingInfo.akad.date).getFullYear() }}
             </p>
           </div>
         </div>
         <div class="text-center">
           <h5 class="text-lg font-semibold">Lokasi</h5>
-          <p v-dompurify-html="props.userInfo.weddingInfo.location.address"></p>
-          <button
-            class="mt-3 h-[30px] rounded-md bg-slate-900 px-3 pb-1 text-xs text-white shadow-md"
+          <p class="font-semibold">
+            {{ props.userInfo.weddingInfo.akad.location.name }}
+          </p>
+          <p
+            v-dompurify-html="props.userInfo.weddingInfo.akad.location.address"
+          ></p>
+          <nuxt-link
+            :to="props.userInfo.weddingInfo.akad.location.maps"
+            target="_blank"
+            class="mt-2"
           >
-            Maps
-          </button>
+            <button
+              class="mt-3 h-[30px] rounded-md bg-slate-900 px-3 pb-1 text-xs text-white shadow-md"
+            >
+              Maps
+            </button>
+          </nuxt-link>
         </div>
       </div>
       <hr class="border-t-1 mx-auto my-6 w-[80%] border-black" />
@@ -58,7 +69,7 @@
         <h4 class="text-2xl">Reception</h4>
         <div class="my-6 flex h-[100px]">
           <div class="flex h-full w-[33.3%] flex-col justify-center px-2">
-            <p class="text-xl font-semibold uppercase">
+            <p class="text-2xl font-semibold uppercase">
               {{
                 getMonth(props.userInfo.weddingInfo.reception.date).shortMonth
               }}
@@ -83,19 +94,32 @@
             </p>
           </div>
           <div class="flex h-full w-[33.3%] flex-col justify-center px-2">
-            <p class="text-xl font-semibold">
+            <p class="text-2xl font-semibold">
               {{ new Date(props.userInfo.weddingInfo.akad.date).getFullYear() }}
             </p>
           </div>
         </div>
         <div class="text-center">
           <h5 class="text-lg font-semibold">Lokasi</h5>
-          <p v-dompurify-html="props.userInfo.weddingInfo.location.address"></p>
-          <button
-            class="mt-3 h-[30px] rounded-md bg-slate-900 px-3 pb-1 text-xs text-white shadow-md"
+          <p class="font-semibold">
+            {{ props.userInfo.weddingInfo.akad.location.name }}
+          </p>
+          <p
+            v-dompurify-html="
+              props.userInfo.weddingInfo.reception.location.address
+            "
+          ></p>
+          <nuxt-link
+            :to="props.userInfo.weddingInfo.reception.location.maps"
+            target="_blank"
+            class="mt-2"
           >
-            Maps
-          </button>
+            <button
+              class="mt-3 h-[30px] rounded-md bg-slate-900 px-3 pb-1 text-xs text-white shadow-md"
+            >
+              Maps
+            </button>
+          </nuxt-link>
         </div>
       </div>
     </div>

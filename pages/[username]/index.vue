@@ -27,6 +27,7 @@
 </template>
 
 <script setup lang="ts">
+/* eslint-disable no-console */
 import { ref, onMounted } from '#imports'
 import DesignOne from '~/templates/designone/index.vue'
 import DesignTwo from '~/templates/designtwo/index.vue'
@@ -80,24 +81,32 @@ async function fetchUserInfo() {
         akad: {
           date: '2024/08/25',
           time: '13:00',
+          location: {
+            name: `Masjid Jami' Al-Falaah`,
+            address: `Jl. Aup Bar RT 03/ RW 10 Pasar Minggu,
+          Jakarta Selatan, DKI Jakarta 12540`,
+            maps: 'https://maps.app.goo.gl/P6v2EhcSwnZ5Dk9KA',
+          },
         },
         reception: {
           date: '2024/08/25',
           time: '15:00',
+          location: {
+            name: `Masjid Jami' Al-Falaah`,
+            address: `Jl. Aup Bar RT 03/ RW 10 Pasar Minggu,
+          Jakarta Selatan, DKI Jakarta 12540`,
+            maps: 'https://maps.app.goo.gl/P6v2EhcSwnZ5Dk9KA',
+          },
         },
         endTime: {
           date: '2024/08/25',
           time: '17:00',
         },
-        location: {
-          name: `Masjid Jami' Al-Falaah`,
-          address: `Jl. Aup Bar RT 03/ RW 10 Pasar Minggu
-          Pasar Minggu, Jakarta Selatan, DKI Jakarta 12540`,
-        },
       },
     }
     handleAssignBrides(res)
     userInfo.value = res
+
     console.log('res:', res)
     console.log('response:', response)
   } catch (error) {
@@ -115,19 +124,26 @@ async function fetchUserInfo() {
         akad: {
           date: '2024/08/25',
           time: '13:00',
+          location: {
+            name: `Masjid Jami' Al-Falaah`,
+            address: `Jl. Aup Bar RT 03/ RW 10 Pasar Minggu,
+            Jakarta Selatan, DKI Jakarta 12540`,
+            maps: 'https://maps.app.goo.gl/P6v2EhcSwnZ5Dk9KA',
+          },
         },
         reception: {
           date: '2024/08/25',
           time: '15:00',
+          location: {
+            name: `Masjid Jami' Al-Falaah`,
+            address: `Jl. Aup Bar RT 03/ RW 10 Pasar Minggu,
+            Jakarta Selatan, DKI Jakarta 12540`,
+            maps: 'https://maps.app.goo.gl/P6v2EhcSwnZ5Dk9KA',
+          },
         },
         endTime: {
           date: '2024/08/25',
           time: '17:00',
-        },
-        location: {
-          name: `Masjid Jami' Al-Falaah`,
-          address: `Jl. Aup Bar RT 03/ RW 10 Pasar Minggu,
-          Pasar Minggu, Jakarta Selatan, DKI Jakarta 12540`,
         },
       },
     }
