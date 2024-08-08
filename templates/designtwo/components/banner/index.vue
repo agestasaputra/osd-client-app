@@ -110,6 +110,7 @@ const date = computed(() => {
     const result = akadDate.toLocaleDateString('id-ID', options)
     return result
   } catch (error) {
+    // eslint-disable-next-line no-console
     console.error('Error:', error)
     return
   }

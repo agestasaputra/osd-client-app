@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unsafe-argument */
 import VueDOMPurifyHTML from 'vue-dompurify-html'
 
 export default defineNuxtPlugin((nuxtApp) => {
