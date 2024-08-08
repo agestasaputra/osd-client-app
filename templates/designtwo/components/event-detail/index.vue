@@ -1,5 +1,5 @@
 <template>
-  <section class="px-10 py-[100px] text-center">
+  <section class="bg-zinc-900 px-10 py-[100px] text-center">
     <h3 class="text-2xl">{{ state.title }}</h3>
     <hr class="border-t-1 mx-auto mb-6 mt-3 w-[50%]" />
     <div
@@ -56,7 +56,7 @@
             class="mt-2"
           >
             <button
-              class="mt-3 h-[30px] rounded-md bg-slate-900 px-3 pb-1 text-xs text-white shadow-md"
+              class="mt-3 h-[30px] rounded-md bg-zinc-900 px-3 pb-1 text-xs text-white shadow-md"
             >
               Maps
             </button>
@@ -115,7 +115,7 @@
             class="mt-2"
           >
             <button
-              class="mt-3 h-[30px] rounded-md bg-slate-900 px-3 pb-1 text-xs text-white shadow-md"
+              class="mt-3 h-[30px] rounded-md bg-zinc-900 px-3 pb-1 text-xs text-white shadow-md"
             >
               Maps
             </button>
