@@ -1,4 +1,11 @@
-export interface UserInfo {
+interface loveStoryItem {
+  date: string
+  image: string
+  title: string
+  desc: string
+}
+
+interface UserInfo {
   profile: {
     name: string
     email: string
@@ -30,5 +37,8 @@ export interface UserInfo {
       date: string // YYYY/MM/DD
       time: string // HH:MM
     }
+    loveStory: loveStoryItem[]
   }
 }
+
+export type { loveStoryItem, UserInfo }

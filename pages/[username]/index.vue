@@ -102,6 +102,31 @@ async function fetchUserInfo() {
           date: '2024/08/25',
           time: '17:00',
         },
+        loveStory: [
+          {
+            date: '2022/09/12',
+            image:
+              'https://hi.momenkita.id/wp-content/uploads/2024/03/BRIDE-1--768x512.jpg',
+            title: 'Awal Bertemu',
+            desc: 'Kami bertemu di sebuah acara yang diadakan oleh teman kami.',
+          },
+          {
+            date: '2022/09/12',
+            image:
+              'https://hi.momenkita.id/wp-content/uploads/2024/03/FOOTER-1--768x512.jpg',
+            title: 'Melamarku',
+            desc: `Setelah sekian tahun cerita panjang kita, tepat pada tanggal 30
+            april 2023 dia datang dengan niat serius membawa keluarganya untuk melamarku.`,
+          },
+          {
+            date: '2022/09/12',
+            image:
+              'https://hi.momenkita.id/wp-content/uploads/2024/03/BRIDE-1--768x512.jpg',
+            title: 'Mengikat Janji',
+            desc: `Di tanggal 30 September 2023 di mulainya awal cerita bersama
+            sebagai keluarga. Semoga langkah kami sellau diridhoi oleh Allah SWT.`,
+          },
+        ],
       },
     }
     handleAssignBrides(res)
@@ -145,6 +170,31 @@ async function fetchUserInfo() {
           date: '2024/08/25',
           time: '17:00',
         },
+        loveStory: [
+          {
+            date: '2022/09/12',
+            image:
+              'https://hi.momenkita.id/wp-content/uploads/2024/03/BRIDE-1--768x512.jpg',
+            title: 'Awal Bertemu',
+            desc: 'Kami bertemu di sebuah acara yang diadakan oleh teman kami.',
+          },
+          {
+            date: '2022/09/12',
+            image:
+              'https://hi.momenkita.id/wp-content/uploads/2024/03/FOOTER-1--768x512.jpg',
+            title: 'Melamarku',
+            desc: `Setelah sekian tahun cerita panjang kita, tepat pada tanggal 30
+            april 2023 dia datang dengan niat serius membawa keluarganya untuk melamarku.`,
+          },
+          {
+            date: '2022/09/12',
+            image:
+              'https://hi.momenkita.id/wp-content/uploads/2024/03/BRIDE-1--768x512.jpg',
+            title: 'Mengikat Janji',
+            desc: `Di tanggal 30 September 2023 di mulainya awal cerita bersama
+            sebagai keluarga. Semoga langkah kami sellau diridhoi oleh Allah SWT.`,
+          },
+        ],
       },
     }
     handleAssignBrides(res)
