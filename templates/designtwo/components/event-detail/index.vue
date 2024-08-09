@@ -13,7 +13,7 @@
     >
       <!-- AKAD NIKAH -->
       <div>
-        <h4 class="text-2xl">Akad Nikah</h4>
+        <h4 class="text-2xl font-semibold">Akad Nikah</h4>
         <div class="my-6 flex h-[100px]">
           <div class="flex h-full w-[33.3%] flex-col justify-center px-2">
             <p class="text-2xl font-semibold uppercase">
@@ -56,7 +56,11 @@
             class="mt-2"
           >
             <button
-              class="mt-3 h-[30px] rounded-md bg-zinc-900 px-3 pb-1 text-xs text-white shadow-md"
+              :class="{
+                'mt-3 h-[30px] rounded-md bg-zinc-900': true,
+                'px-3 pb-1 text-xs text-white shadow-md': true,
+                'shadow-sm shadow-neutral-950/100': true,
+              }"
             >
               Maps
             </button>
@@ -66,7 +70,7 @@
       <hr class="border-t-1 mx-auto my-6 w-[80%] border-black" />
       <!-- RESEPSI -->
       <div>
-        <h4 class="text-2xl">Reception</h4>
+        <h4 class="text-2xl font-semibold">Reception</h4>
         <div class="my-6 flex h-[100px]">
           <div class="flex h-full w-[33.3%] flex-col justify-center px-2">
             <p class="text-2xl font-semibold uppercase">
@@ -115,7 +119,11 @@
             class="mt-2"
           >
             <button
-              class="mt-3 h-[30px] rounded-md bg-zinc-900 px-3 pb-1 text-xs text-white shadow-md"
+              :class="{
+                'mt-3 h-[30px] rounded-md bg-zinc-900': true,
+                'px-3 pb-1 text-xs text-white shadow-md': true,
+                'shadow-sm shadow-neutral-950/100': true,
+              }"
             >
               Maps
             </button>

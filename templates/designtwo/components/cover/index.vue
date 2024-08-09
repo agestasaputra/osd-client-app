@@ -21,8 +21,12 @@
       <h4>{{ date }}</h4>
     </div>
     <div>
+      <!-- class="rounded-full bg-white px-4 py-1 pb-2 text-black shadow-md" -->
       <button
-        class="rounded-full bg-white px-4 py-1 pb-2 text-black shadow-md"
+        :class="{
+          'rounded-full bg-white px-4 py-1 pb-2 text-sm': true,
+          'text-black shadow-md shadow-neutral-950/100': true,
+        }"
         @click="handleButtonBukaUndangan"
       >
         {{ state.button }}
