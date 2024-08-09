@@ -1,15 +1,17 @@
 <template>
-  <section class="bg-white px-10 py-[100px] text-center text-black">
+  <section class="bg-[#cccbc8] px-10 py-[100px] text-center text-black">
     <h3 class="text-2xl">{{ state.title }}</h3>
     <hr class="border-t-1 mx-auto mb-6 mt-3 w-[50%] border-black" />
 
     <div class="flex h-fit w-fit">
-      <div class="mr-8 w-5 rounded-xl bg-zinc-800"></div>
+      <div
+        class="mr-8 w-5 rounded-xl bg-zinc-800 shadow-sm shadow-neutral-950/100"
+      ></div>
       <div>
         <div
           v-for="(item, key) in props.userInfo.weddingInfo.loveStory"
           :key="key"
-          class="mb-8 rounded-lg bg-zinc-800 pb-6 text-white"
+          class="mb-8 rounded-lg bg-zinc-800 pb-6 text-white shadow-lg shadow-neutral-950/100"
         >
           <!-- Triangle icon  -->
           <!-- License: MIT. Made by radix-ui: https://github.com/radix-ui/icons -->
@@ -29,7 +31,11 @@
             />
           </svg>
           <div
-            class="absolute ml-[-55px] mt-2 h-fit w-fit rounded-full bg-[#b5a272] p-[6px]"
+            :class="{
+              'absolute ml-[-55px] mt-2 h-fit w-fit': true,
+              'rounded-full bg-[#b5a272] p-[6px]': true,
+              'shadow-lg shadow-neutral-950/100': true,
+            }"
           >
             <IconCalendarHeart :size="25" color="black" />
           </div>

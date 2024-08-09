@@ -1,5 +1,5 @@
 <template>
-  <section class="bg-white px-10 py-[100px] text-center text-black">
+  <section class="bg-[#cccbc8] px-10 py-[100px] text-center text-black">
     <h3 class="text-2xl">{{ state.title }}</h3>
     <hr class="border-t-1 mx-auto mb-6 mt-3 w-[50%] border-black" />
     <div class="text-xs" v-dompurify-html="state.desc"></div>
@@ -25,9 +25,12 @@
         <p class="text-xs">Seconds</p>
       </div>
     </vue-countdown>
-    <nuxt-link :to="state.button.link" target="_blank">
+    <nuxt-link v-if="time && time > 0" :to="state.button.link" target="_blank">
       <button
-        class="rounded-full bg-zinc-900 px-4 py-2 pb-2 text-xs text-white shadow-md"
+        :class="{
+          'rounded-full bg-zinc-900 px-4 py-2 pb-2 text-xs': true,
+          'text-white shadow-md shadow-neutral-950/100': true,
+        }"
       >
         {{ state.button.name }}
       </button>
