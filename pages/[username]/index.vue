@@ -122,23 +122,29 @@ async function fetchUserInfo() {
         loveStory: [
           {
             date: '2022/09/12',
-            image:
-              'https://hi.momenkita.id/wp-content/uploads/2024/03/BRIDE-1--768x512.jpg',
+            image: {
+              url: 'https://hi.momenkita.id/wp-content/uploads/2024/03/BRIDE-1--768x512.jpg',
+              template: 'horizontal', // 'horizontal' | 'vertical'
+            },
             title: 'Awal Bertemu',
             desc: 'Kami bertemu di sebuah acara yang diadakan oleh teman kami.',
           },
           {
             date: '2022/09/12',
-            image:
-              'https://hi.momenkita.id/wp-content/uploads/2024/03/FOOTER-1--768x512.jpg',
+            image: {
+              url: 'https://hi.momenkita.id/wp-content/uploads/2024/03/FOOTER-1--768x512.jpg',
+              template: 'horizontal', // 'horizontal' | 'vertical'
+            },
             title: 'Melamarku',
             desc: `Setelah sekian tahun cerita panjang kita, tepat pada tanggal 30
             april 2023 dia datang dengan niat serius membawa keluarganya untuk melamarku.`,
           },
           {
             date: '2022/09/12',
-            image:
-              'https://hi.momenkita.id/wp-content/uploads/2024/03/BRIDE-1--768x512.jpg',
+            image: {
+              url: 'https://hi.momenkita.id/wp-content/uploads/2024/03/BRIDE-1--768x512.jpg',
+              template: 'horizontal', // 'horizontal' | 'vertical'
+            },
             title: 'Mengikat Janji',
             desc: `Di tanggal 30 September 2023 di mulainya awal cerita bersama
             sebagai keluarga. Semoga langkah kami sellau diridhoi oleh Allah SWT.`,
@@ -262,23 +268,29 @@ async function fetchUserInfo() {
         loveStory: [
           {
             date: '2022/09/12',
-            image:
-              'https://hi.momenkita.id/wp-content/uploads/2024/03/BRIDE-1--768x512.jpg',
+            image: {
+              url: 'https://hi.momenkita.id/wp-content/uploads/2024/03/BRIDE-1--768x512.jpg',
+              template: 'horizontal', // 'horizontal' | 'vertical'
+            },
             title: 'Awal Bertemu',
             desc: 'Kami bertemu di sebuah acara yang diadakan oleh teman kami.',
           },
           {
             date: '2022/09/12',
-            image:
-              'https://hi.momenkita.id/wp-content/uploads/2024/03/FOOTER-1--768x512.jpg',
+            image: {
+              url: 'https://hi.momenkita.id/wp-content/uploads/2024/03/FOOTER-1--768x512.jpg',
+              template: 'vertical', // 'horizontal' | 'vertical'
+            },
             title: 'Melamarku',
             desc: `Setelah sekian tahun cerita panjang kita, tepat pada tanggal 30
             april 2023 dia datang dengan niat serius membawa keluarganya untuk melamarku.`,
           },
           {
             date: '2022/09/12',
-            image:
-              'https://hi.momenkita.id/wp-content/uploads/2024/03/BRIDE-1--768x512.jpg',
+            image: {
+              url: 'https://hi.momenkita.id/wp-content/uploads/2024/03/BRIDE-1--768x512.jpg',
+              template: 'horizontal', // 'horizontal' | 'vertical'
+            },
             title: 'Mengikat Janji',
             desc: `Di tanggal 30 September 2023 di mulainya awal cerita bersama
             sebagai keluarga. Semoga langkah kami sellau diridhoi oleh Allah SWT.`,

@@ -9,7 +9,7 @@
         <div
           v-for="(item, key) in props.userInfo.weddingInfo.loveStory"
           :key="key"
-          class="mb-8 rounded-lg bg-zinc-800 pb-6 text-white shadow-lg shadow-neutral-950/100"
+          class="mb-8 rounded-lg bg-zinc-800 pb-2 text-white shadow-lg shadow-neutral-950/100"
         >
           <!-- Triangle icon  -->
           <!-- License: MIT. Made by radix-ui: https://github.com/radix-ui/icons -->
@@ -43,17 +43,22 @@
             <IconCalendarHeart :size="25" color="#b5a272" />
           </div> -->
           <div class="p-2">
-            <div class="flex h-[240px] items-center justify-center bg-zinc-800">
-              <img
-                :src="item.image"
-                alt="Love Story #1"
-                class="h-fit max-h-full w-fit max-w-full rounded-lg"
-              />
-            </div>
+            <div
+              :class="{
+                'flex items-center justify-center rounded-md bg-zinc-800 bg-cover': true,
+                'h-[45vw] max-h-[215px] min-h-[140px]':
+                  item.image.template === 'horizontal',
+                'h-[80vw] max-h-[388px] min-h-[260px]':
+                  item.image.template === 'vertical',
+              }"
+              :style="{
+                backgroundImage: `url(${item.image.url})`,
+              }"
+            ></div>
           </div>
-          <div class="p-4 text-left">
-            <h5 class="mb-2 text-xl">{{ item.title }}</h5>
-            <p class="text-xs">{{ item.desc }}</p>
+          <div class="p-4">
+            <h5 class="mb-2 text-left text-xl">{{ item.title }}</h5>
+            <p class="text-justify text-xs">{{ item.desc }}</p>
           </div>
         </div>
       </div>

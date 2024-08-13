@@ -1,6 +1,9 @@
 interface loveStoryItem {
   date: string
-  image: string
+  image: {
+    url: string
+    template: string // 'horizontal' | 'vertical'
+  }
   title: string
   desc: string
 }
