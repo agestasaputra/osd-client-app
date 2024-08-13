@@ -1,4 +1,4 @@
-interface loveStoryItem {
+interface loveStoryList {
   date: string
   image: {
     url: string
@@ -7,12 +7,16 @@ interface loveStoryItem {
   title: string
   desc: string
 }
-interface bank {
+interface bankList {
   bank: string // 'BCA' | 'BNI' | 'BRI' | 'Mandiri'
   number: string
   name: string
 }
-interface galleryImage {
+interface imageList {
+  url: string
+}
+interface linkList {
+  name: string
   url: string
 }
 
@@ -26,6 +30,8 @@ interface UserInfo {
   }
   weddingInfo: {
     couples: {
+      title: string
+      desc: string
       bride: {
         name: string
         fullName: string
@@ -33,6 +39,7 @@ interface UserInfo {
           father: string
           mother: string
         }
+        instagram: string
       }
       groom: {
         name: string
@@ -41,37 +48,55 @@ interface UserInfo {
           father: string
           mother: string
         }
+        instagram: string
       }
     }
-    akad: {
-      date: string // YYYY/MM/DD
-      time: string // HH:MM
-      location: {
-        name: string
-        address: string
-        maps: string
+    arRum: {
+      title: string
+      desc: string
+    }
+    eventDetail: {
+      title: string // 'Wedding Event'
+      akad: {
+        title: string // 'Akad Nikah'
+        date: string // YYYY/MM/DD
+        time: string // HH:MM
+        location: {
+          name: string
+          address: string
+          maps: string
+        }
+      }
+      reception: {
+        title: string // 'Resepsi'
+        date: string // YYYY/MM/DD
+        time: string // HH:MM
+        location: {
+          name: string
+          address: string
+          maps: string
+        }
+      }
+      countdown: {
+        title: string
+        endTime: {
+          date: string // YYYY/MM/DD
+          time: string // HH:MM
+        }
       }
     }
-    reception: {
-      date: string // YYYY/MM/DD
-      time: string // HH:MM
-      location: {
-        name: string
-        address: string
-        maps: string
-      }
-    }
-    endTime: {
-      date: string // YYYY/MM/DD
-      time: string // HH:MM
-    }
-    loveStory: loveStoryItem[]
-    banks: bank[]
+    loveStory: loveStoryList[]
+    banks: bankList[]
     gallery: {
       template: string
-      images: galleryImage[][]
+      images: imageList[][]
+    }
+    liveStreaming: {
+      title: string
+      desc: string
+      links: linkList[]
     }
   }
 }
 
-export type { loveStoryItem, UserInfo }
+export type { loveStoryList, UserInfo }

@@ -78,6 +78,8 @@ async function fetchUserInfo() {
       },
       weddingInfo: {
         couples: {
+          title: 'We Found Love',
+          desc: 'Tanpa mengurangi rasa hormat, kami bermaksud mengundang Bapak/Ibu/Saudara/I untuk menghadiri acara Pernikahan kami:',
           bride: {
             name: 'Siska',
             fullName: 'Siska Dwi Putri Yuliansyah',
@@ -85,6 +87,7 @@ async function fetchUserInfo() {
               father: 'Lontang',
               mother: 'Lantung',
             },
+            instagram: 'https://www.instagram.com/siskadptr',
           },
           groom: {
             name: 'Agesta',
@@ -93,63 +96,48 @@ async function fetchUserInfo() {
               father: 'Thoriq',
               mother: 'Fuji',
             },
+            instagram: 'https://www.instagram.com/agestasaputra',
           },
         },
-        akad: {
-          date: '2024/08/25',
-          time: '13:00',
-          location: {
-            name: `Masjid Jami' Al-Falaah`,
-            address: `Jl. Aup Bar RT 03/ RW 10 Pasar Minggu,
-          Jakarta Selatan, DKI Jakarta 12540`,
-            maps: 'https://maps.app.goo.gl/P6v2EhcSwnZ5Dk9KA',
-          },
+        arRum: {
+          title: 'Q.S. Ar-Rum: 21',
+          desc: `"Dan di antara tanda-tanda kekuasaan-Nya diciptakan-Nya untukmu pasangan hidup
+          dari jenismu sendiri supaya kamu dapat ketenangan hati dan dijadikannya kasih sayang
+          di antara kamu. Sesungguhnya yang demikian menjadi tanda-tanda kebesaran-Nya bagi
+          orang-orang yang berpikir."`,
         },
-        reception: {
-          date: '2024/08/25',
-          time: '15:00',
-          location: {
-            name: `Masjid Jami' Al-Falaah`,
-            address: `Jl. Aup Bar RT 03/ RW 10 Pasar Minggu,
-          Jakarta Selatan, DKI Jakarta 12540`,
-            maps: 'https://maps.app.goo.gl/P6v2EhcSwnZ5Dk9KA',
-          },
-        },
-        endTime: {
-          date: '2024/08/25',
-          time: '17:00',
-        },
-        loveStory: [
-          {
-            date: '2022/09/12',
-            image: {
-              url: 'https://hi.momenkita.id/wp-content/uploads/2024/03/BRIDE-1--768x512.jpg',
-              template: 'horizontal', // 'horizontal' | 'vertical'
+        eventDetail: {
+          title: 'Wedding Day',
+          akad: {
+            title: 'Akad Nikah',
+            date: '2024/08/25',
+            time: '13:00',
+            location: {
+              name: `Masjid Jami' Al-Falaah`,
+              address: `Jl. Aup Bar RT 03/ RW 10 Pasar Minggu,
+              Jakarta Selatan, DKI Jakarta 12540`,
+              maps: 'https://maps.app.goo.gl/P6v2EhcSwnZ5Dk9KA',
             },
-            title: 'Awal Bertemu',
-            desc: 'Kami bertemu di sebuah acara yang diadakan oleh teman kami.',
           },
-          {
-            date: '2022/09/12',
-            image: {
-              url: 'https://hi.momenkita.id/wp-content/uploads/2024/03/FOOTER-1--768x512.jpg',
-              template: 'horizontal', // 'horizontal' | 'vertical'
+          reception: {
+            title: 'Resepsi',
+            date: '2024/08/25',
+            time: '15:00',
+            location: {
+              name: `Masjid Jami' Al-Falaah`,
+              address: `Jl. Aup Bar RT 03/ RW 10 Pasar Minggu,
+              Jakarta Selatan, DKI Jakarta 12540`,
+              maps: 'https://maps.app.goo.gl/P6v2EhcSwnZ5Dk9KA',
             },
-            title: 'Melamarku',
-            desc: `Setelah sekian tahun cerita panjang kita, tepat pada tanggal 30
-            april 2023 dia datang dengan niat serius membawa keluarganya untuk melamarku.`,
           },
-          {
-            date: '2022/09/12',
-            image: {
-              url: 'https://hi.momenkita.id/wp-content/uploads/2024/03/BRIDE-1--768x512.jpg',
-              template: 'horizontal', // 'horizontal' | 'vertical'
+          countdown: {
+            title: 'Count The Date',
+            endTime: {
+              date: '2024/08/25',
+              time: '17:00',
             },
-            title: 'Mengikat Janji',
-            desc: `Di tanggal 30 September 2023 di mulainya awal cerita bersama
-            sebagai keluarga. Semoga langkah kami sellau diridhoi oleh Allah SWT.`,
           },
-        ],
+        },
         banks: [
           {
             bank: 'BCA', // 'BCA' | 'BNI' | 'BRI' | 'Mandiri'
@@ -205,6 +193,56 @@ async function fetchUserInfo() {
             ],
           ],
         },
+        loveStory: [
+          {
+            date: '2022/09/12',
+            image: {
+              url: 'https://hi.momenkita.id/wp-content/uploads/2024/03/BRIDE-1--768x512.jpg',
+              template: 'horizontal', // 'horizontal' | 'vertical'
+            },
+            title: 'Awal Bertemu',
+            desc: 'Kami bertemu di sebuah acara yang diadakan oleh teman kami.',
+          },
+          {
+            date: '2022/09/12',
+            image: {
+              url: 'https://hi.momenkita.id/wp-content/uploads/2024/03/FOOTER-1--768x512.jpg',
+              template: 'horizontal', // 'horizontal' | 'vertical'
+            },
+            title: 'Melamarku',
+            desc: `Setelah sekian tahun cerita panjang kita, tepat pada tanggal 30
+            april 2023 dia datang dengan niat serius membawa keluarganya untuk melamarku.`,
+          },
+          {
+            date: '2022/09/12',
+            image: {
+              url: 'https://hi.momenkita.id/wp-content/uploads/2024/03/BRIDE-1--768x512.jpg',
+              template: 'horizontal', // 'horizontal' | 'vertical'
+            },
+            title: 'Mengikat Janji',
+            desc: `Di tanggal 30 September 2023 di mulainya awal cerita bersama
+            sebagai keluarga. Semoga langkah kami sellau diridhoi oleh Allah SWT.`,
+          },
+        ],
+        liveStreaming: {
+          title: 'Live Streaming',
+          desc: `Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/I
+          berkenan hadir untuk memberikan doa restu kepada kedua mempelai`,
+          links: [
+            {
+              name: 'Instagram pria',
+              url: 'https://www.instagram.com/agestasaputra',
+            },
+            {
+              name: 'Instagram wanita',
+              url: 'https://www.instagram.com/siskadptr',
+            },
+            {
+              name: 'Youtube',
+              url: 'https://www.youtube.com',
+            },
+          ],
+        },
       },
     }
     // handleAssignBrides(res)
@@ -224,6 +262,8 @@ async function fetchUserInfo() {
       },
       weddingInfo: {
         couples: {
+          title: 'We Found Love',
+          desc: 'Tanpa mengurangi rasa hormat, kami bermaksud mengundang Bapak/Ibu/Saudara/I untuk menghadiri acara Pernikahan kami:',
           bride: {
             name: 'Siska',
             fullName: 'Siska Dwi Putri Yuliansyah',
@@ -231,6 +271,7 @@ async function fetchUserInfo() {
               father: 'Lontang',
               mother: 'Lantung',
             },
+            instagram: 'https://www.instagram.com/siskadptr',
           },
           groom: {
             name: 'Agesta',
@@ -239,63 +280,48 @@ async function fetchUserInfo() {
               father: 'Thoriq',
               mother: 'Fuji',
             },
+            instagram: 'https://www.instagram.com/agestasaputra',
           },
         },
-        akad: {
-          date: '2024/08/25',
-          time: '13:00',
-          location: {
-            name: `Masjid Jami' Al-Falaah`,
-            address: `Jl. Aup Bar RT 03/ RW 10 Pasar Minggu,
-            Jakarta Selatan, DKI Jakarta 12540`,
-            maps: 'https://maps.app.goo.gl/P6v2EhcSwnZ5Dk9KA',
-          },
+        arRum: {
+          title: 'Q.S. Ar-Rum: 21',
+          desc: `"Dan di antara tanda-tanda kekuasaan-Nya diciptakan-Nya untukmu pasangan hidup
+          dari jenismu sendiri supaya kamu dapat ketenangan hati dan dijadikannya kasih sayang
+          di antara kamu. Sesungguhnya yang demikian menjadi tanda-tanda kebesaran-Nya bagi
+          orang-orang yang berpikir."`,
         },
-        reception: {
-          date: '2024/08/25',
-          time: '15:00',
-          location: {
-            name: `Masjid Jami' Al-Falaah`,
-            address: `Jl. Aup Bar RT 03/ RW 10 Pasar Minggu,
-            Jakarta Selatan, DKI Jakarta 12540`,
-            maps: 'https://maps.app.goo.gl/P6v2EhcSwnZ5Dk9KA',
-          },
-        },
-        endTime: {
-          date: '2024/08/25',
-          time: '17:00',
-        },
-        loveStory: [
-          {
-            date: '2022/09/12',
-            image: {
-              url: 'https://hi.momenkita.id/wp-content/uploads/2024/03/BRIDE-1--768x512.jpg',
-              template: 'horizontal', // 'horizontal' | 'vertical'
+        eventDetail: {
+          title: 'Wedding Day',
+          akad: {
+            title: 'Akad Nikah',
+            date: '2024/08/25',
+            time: '13:00',
+            location: {
+              name: `Masjid Jami' Al-Falaah`,
+              address: `Jl. Aup Bar RT 03/ RW 10 Pasar Minggu,
+              Jakarta Selatan, DKI Jakarta 12540`,
+              maps: 'https://maps.app.goo.gl/P6v2EhcSwnZ5Dk9KA',
             },
-            title: 'Awal Bertemu',
-            desc: 'Kami bertemu di sebuah acara yang diadakan oleh teman kami.',
           },
-          {
-            date: '2022/09/12',
-            image: {
-              url: 'https://hi.momenkita.id/wp-content/uploads/2024/03/FOOTER-1--768x512.jpg',
-              template: 'vertical', // 'horizontal' | 'vertical'
+          reception: {
+            title: 'Resepsi',
+            date: '2024/08/25',
+            time: '15:00',
+            location: {
+              name: `Masjid Jami' Al-Falaah`,
+              address: `Jl. Aup Bar RT 03/ RW 10 Pasar Minggu,
+              Jakarta Selatan, DKI Jakarta 12540`,
+              maps: 'https://maps.app.goo.gl/P6v2EhcSwnZ5Dk9KA',
             },
-            title: 'Melamarku',
-            desc: `Setelah sekian tahun cerita panjang kita, tepat pada tanggal 30
-            april 2023 dia datang dengan niat serius membawa keluarganya untuk melamarku.`,
           },
-          {
-            date: '2022/09/12',
-            image: {
-              url: 'https://hi.momenkita.id/wp-content/uploads/2024/03/BRIDE-1--768x512.jpg',
-              template: 'horizontal', // 'horizontal' | 'vertical'
+          countdown: {
+            title: 'Count The Date',
+            endTime: {
+              date: '2024/08/25',
+              time: '17:00',
             },
-            title: 'Mengikat Janji',
-            desc: `Di tanggal 30 September 2023 di mulainya awal cerita bersama
-            sebagai keluarga. Semoga langkah kami sellau diridhoi oleh Allah SWT.`,
           },
-        ],
+        },
         banks: [
           {
             bank: 'BCA', // 'BCA' | 'BNI' | 'BRI' | 'Mandiri'
@@ -349,6 +375,56 @@ async function fetchUserInfo() {
                 url: 'https://raw.githubusercontent.com/agestasaputra/osd-assets/master/siska-agesta/img-gallery-4.png',
               },
             ],
+          ],
+        },
+        loveStory: [
+          {
+            date: '2022/09/12',
+            image: {
+              url: 'https://hi.momenkita.id/wp-content/uploads/2024/03/BRIDE-1--768x512.jpg',
+              template: 'horizontal', // 'horizontal' | 'vertical'
+            },
+            title: 'Awal Bertemu',
+            desc: 'Kami bertemu di sebuah acara yang diadakan oleh teman kami.',
+          },
+          {
+            date: '2022/09/12',
+            image: {
+              url: 'https://hi.momenkita.id/wp-content/uploads/2024/03/FOOTER-1--768x512.jpg',
+              template: 'vertical', // 'horizontal' | 'vertical'
+            },
+            title: 'Melamarku',
+            desc: `Setelah sekian tahun cerita panjang kita, tepat pada tanggal 30
+            april 2023 dia datang dengan niat serius membawa keluarganya untuk melamarku.`,
+          },
+          {
+            date: '2022/09/12',
+            image: {
+              url: 'https://hi.momenkita.id/wp-content/uploads/2024/03/BRIDE-1--768x512.jpg',
+              template: 'horizontal', // 'horizontal' | 'vertical'
+            },
+            title: 'Mengikat Janji',
+            desc: `Di tanggal 30 September 2023 di mulainya awal cerita bersama
+            sebagai keluarga. Semoga langkah kami sellau diridhoi oleh Allah SWT.`,
+          },
+        ],
+        liveStreaming: {
+          title: 'Live Streaming',
+          desc: `Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/I
+          berkenan hadir untuk memberikan doa restu kepada kedua mempelai`,
+          links: [
+            {
+              name: 'Instagram Pria',
+              url: 'https://www.instagram.com/agestasaputra',
+            },
+            {
+              name: 'Instagram Wanita',
+              url: 'https://www.instagram.com/siskadptr',
+            },
+            {
+              name: 'Youtube',
+              url: 'https://www.youtube.com',
+            },
           ],
         },
       },

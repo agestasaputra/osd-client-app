@@ -12,8 +12,13 @@
         </svg>
       </div> -->
     <h3 class="text-2xl">{{ state.title }}</h3>
-    <hr class="border-t-1 mx-auto mb-6 mt-3 w-[50%] border-white" />
-    <div v-dompurify-html="state.desc"></div>
+    <hr
+      v-if="state.title"
+      class="border-t-1 mx-auto mb-6 mt-3 w-[50%] border-white"
+    />
+    <!-- <div v-dompurify-html="state.desc"></div> -->
+    <p class="mb-1 text-sm font-semibold">{{ state.desc.title }}</p>
+    <p class="text-xs">{{ state.desc.desc }}</p>
   </section>
 </template>
 
@@ -34,18 +39,25 @@ const props = defineProps({
 })
 
 const state = reactive({
-  title: 'Invitation',
-  desc: `
-    <p style="font-size: 22px">السلام عليكم ورحمة الله وبركاته</p>
-    <p style="font-size: 12px"> We are inviting you to celebrate the day when
-    we take our next large step in the relationship. We promise you that
-    the wedding will be magnificent. We would be incredibly grateful
-    if you came to celebrate our love together with us! </p>
-    <br />
-    <br />
-    <br />
-    <p style="font-size: 16px"> - Siska & Agesta - </p>
-  `,
+  title: '',
+  desc: {
+    // title: 'السلام عليكم ورحمة الله وبركاته',
+    title: 'Assalamu’alaikum Wr. Wb.',
+    desc: `Kami mengundang Anda untuk merayakan hari ketika kami mengambil langkah besar berikutnya dalam hubungan ini. 
+    Kami berjanji kepada Anda bahwa pernikahan itu akan luar biasa. Kami akan sangat berterima kasih
+    jika Anda datang untuk merayakan cinta kami bersama kami`,
+  },
+  // desc: `
+  //   <p style="font-size: 22px">السلام عليكم ورحمة الله وبركاته</p>
+  //   <p style="font-size: 12px"> We are inviting you to celebrate the day when
+  //   we take our next large step in the relationship. We promise you that
+  //   the wedding will be magnificent. We would be incredibly grateful
+  //   if you came to celebrate our love together with us! </p>
+  //   <br />
+  //   <br />
+  //   <br />
+  //   <p style="font-size: 16px"> - Siska & Agesta - </p>
+  // `,
 })
 </script>
 
