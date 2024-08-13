@@ -8,7 +8,7 @@
         // 'border-stone-600 bg-[#e5c064] text-xs text-black': true,
         'border-stone-600 bg-[#b5a272] text-xs text-black': true,
         // 'border-stone-600 bg-white text-xs text-black': true,
-        'px-6 pb-8 pt-12': true,
+        'px-2 pb-8 pt-12': true,
       }"
     >
       <!-- AKAD NIKAH -->
@@ -23,7 +23,7 @@
           <div
             :class="{
               'flex h-full w-[33.3%] flex-col justify-center': true,
-              'border-l-2 border-r-2 border-black px-2 text-center': true,
+              'border-l-2 border-r-2 border-black text-center': true,
             }"
           >
             <p class="text-md">
@@ -82,7 +82,7 @@
           <div
             :class="{
               'flex h-full w-[33.3%] flex-col justify-center': true,
-              'border-l-2 border-r-2 border-black px-2 text-center': true,
+              'border-l-2 border-r-2 border-black text-center': true,
             }"
           >
             <p class="text-md">

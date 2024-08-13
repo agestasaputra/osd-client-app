@@ -77,7 +77,24 @@ async function fetchUserInfo() {
         name: 'design-two',
       },
       weddingInfo: {
-        brides: [],
+        couples: {
+          bride: {
+            name: 'Siska',
+            fullName: 'Siska Dwi Putri Yuliansyah',
+            parents: {
+              father: 'Lontang',
+              mother: 'Lantung',
+            },
+          },
+          groom: {
+            name: 'Agesta',
+            fullName: 'Agesta Budy Saputra',
+            parents: {
+              father: 'Thoriq',
+              mother: 'Fuji',
+            },
+          },
+        },
         akad: {
           date: '2024/08/25',
           time: '13:00',
@@ -127,9 +144,64 @@ async function fetchUserInfo() {
             sebagai keluarga. Semoga langkah kami sellau diridhoi oleh Allah SWT.`,
           },
         ],
+        banks: [
+          {
+            bank: 'BCA', // 'BCA' | 'BNI' | 'BRI' | 'Mandiri'
+            number: '0035994426',
+            name: 'Agesta Budy Saputra',
+          },
+          {
+            bank: 'BRI', // 'BCA' | 'BNI' | 'BRI' | 'Mandiri'
+            number: '0035994426',
+            name: 'Siska Dwi Putri Yuliansyah',
+          },
+          {
+            bank: 'BNI', // 'BCA' | 'BNI' | 'BRI' | 'Mandiri'
+            number: '0035994426',
+            name: 'Agesta Budy Saputra',
+          },
+          {
+            bank: 'JENIUS', // 'BCA' | 'BNI' | 'BRI' | 'Mandiri'
+            number: '0035994426',
+            name: 'Siska Dwi Putri Yuliansyah',
+          },
+        ],
+        gallery: {
+          template: 'template-6',
+          images: [
+            [
+              {
+                url: 'https://raw.githubusercontent.com/agestasaputra/osd-assets/master/siska-agesta/img-gallery-3.png',
+              },
+              {
+                url: 'https://raw.githubusercontent.com/agestasaputra/osd-assets/master/siska-agesta/img-banner-1-compressed.jpg',
+              },
+              {
+                url: 'https://raw.githubusercontent.com/agestasaputra/osd-assets/master/siska-agesta/img-gallery-6.png',
+              },
+              {
+                url: 'https://raw.githubusercontent.com/agestasaputra/osd-assets/master/siska-agesta/img-gallery-4.png',
+              },
+            ],
+            [
+              {
+                url: 'https://raw.githubusercontent.com/agestasaputra/osd-assets/master/siska-agesta/img-gallery-3.png',
+              },
+              {
+                url: 'https://raw.githubusercontent.com/agestasaputra/osd-assets/master/siska-agesta/img-banner-1-compressed.jpg',
+              },
+              {
+                url: 'https://raw.githubusercontent.com/agestasaputra/osd-assets/master/siska-agesta/img-gallery-6.png',
+              },
+              {
+                url: 'https://raw.githubusercontent.com/agestasaputra/osd-assets/master/siska-agesta/img-gallery-4.png',
+              },
+            ],
+          ],
+        },
       },
     }
-    handleAssignBrides(res)
+    // handleAssignBrides(res)
     userInfo.value = res
 
     console.log('res:', res)
@@ -145,7 +217,24 @@ async function fetchUserInfo() {
         name: 'design-two',
       },
       weddingInfo: {
-        brides: [],
+        couples: {
+          bride: {
+            name: 'Siska',
+            fullName: 'Siska Dwi Putri Yuliansyah',
+            parents: {
+              father: 'Lontang',
+              mother: 'Lantung',
+            },
+          },
+          groom: {
+            name: 'Agesta',
+            fullName: 'Agesta Budy Saputra',
+            parents: {
+              father: 'Thoriq',
+              mother: 'Fuji',
+            },
+          },
+        },
         akad: {
           date: '2024/08/25',
           time: '13:00',
@@ -195,18 +284,75 @@ async function fetchUserInfo() {
             sebagai keluarga. Semoga langkah kami sellau diridhoi oleh Allah SWT.`,
           },
         ],
+        banks: [
+          {
+            bank: 'BCA', // 'BCA' | 'BNI' | 'BRI' | 'Mandiri'
+            number: '0035994426',
+            name: 'Agesta Budy Saputra',
+          },
+          {
+            bank: 'BRI', // 'BCA' | 'BNI' | 'BRI' | 'Mandiri'
+            number: '0035994426',
+            name: 'Siska Dwi Putri Yuliansyah',
+          },
+          {
+            bank: 'BNI', // 'BCA' | 'BNI' | 'BRI' | 'Mandiri'
+            number: '0035994426',
+            name: 'Agesta Budy Saputra',
+          },
+          {
+            bank: 'JENIUS', // 'BCA' | 'BNI' | 'BRI' | 'Mandiri'
+            number: '0035994426',
+            name: 'Siska Dwi Putri Yuliansyah',
+          },
+        ],
+        gallery: {
+          template: 'template-6',
+          images: [
+            [
+              {
+                url: 'https://raw.githubusercontent.com/agestasaputra/osd-assets/master/siska-agesta/img-gallery-3.png',
+              },
+              {
+                url: 'https://raw.githubusercontent.com/agestasaputra/osd-assets/master/siska-agesta/img-banner-1-compressed.jpg',
+              },
+              {
+                url: 'https://raw.githubusercontent.com/agestasaputra/osd-assets/master/siska-agesta/img-gallery-6.png',
+              },
+              {
+                url: 'https://raw.githubusercontent.com/agestasaputra/osd-assets/master/siska-agesta/img-gallery-4.png',
+              },
+            ],
+            [
+              {
+                url: 'https://raw.githubusercontent.com/agestasaputra/osd-assets/master/siska-agesta/img-gallery-3.png',
+              },
+              {
+                url: 'https://raw.githubusercontent.com/agestasaputra/osd-assets/master/siska-agesta/img-banner-1-compressed.jpg',
+              },
+              {
+                url: 'https://raw.githubusercontent.com/agestasaputra/osd-assets/master/siska-agesta/img-gallery-6.png',
+              },
+              {
+                url: 'https://raw.githubusercontent.com/agestasaputra/osd-assets/master/siska-agesta/img-gallery-4.png',
+              },
+            ],
+          ],
+        },
       },
     }
-    handleAssignBrides(res)
+    // handleAssignBrides(res)
     userInfo.value = res
     console.log('res:', res)
   }
 }
-function handleAssignBrides(res: UserInfo) {
-  const brides = (route.params.username as string).split('-')
-  res.weddingInfo.brides = brides
-  userInfo.value = res
-}
+// function handleAssignBrides(res: UserInfo) {
+//   const brides = (route.params.username as string).split('-')
+//   res.weddingInfo.brides = brides
+//   res.weddingInfo.couples.bride.name = brides[0]
+//   res.weddingInfo.couples.groom.name = brides[1]
+//   userInfo.value = res
+// }
 function setLoading(value: boolean) {
   isLoading.value = value
 }

@@ -61,7 +61,7 @@ const state = reactive({
   It is when an imperfect couple learns to enjoy their differences.`,
   button: {
     name: 'Save the date',
-    link: `https://calendar.google.com/calendar/render?action=TEMPLATE&text=Wedding+Day+(${props.userInfo.weddingInfo.brides[0]}+%26+${props.userInfo.weddingInfo.brides[1]})&dates=${props.userInfo.weddingInfo.akad.date.replaceAll('/', '')}T${convertTimeToUTC7(props.userInfo.weddingInfo.akad.date, props.userInfo.weddingInfo.akad.time).time.replaceAll(':', '')}00Z/${props.userInfo.weddingInfo.akad.date.replaceAll('/', '')}T${convertTimeToUTC7(props.userInfo.weddingInfo.endTime.date, props.userInfo.weddingInfo.endTime.time).time.replaceAll(':', '')}00Z&details=Merayakan+pernikahan+${props.userInfo.weddingInfo.brides[0]}+dan+${props.userInfo.weddingInfo.brides[1]}&location=Jl.+Kebahagiaan+No.123,+Jakarta`,
+    link: `https://calendar.google.com/calendar/render?action=TEMPLATE&text=Wedding+Day+(${props.userInfo.weddingInfo.couples.bride.name}+%26+${props.userInfo.weddingInfo.couples.groom.name})&dates=${props.userInfo.weddingInfo.akad.date.replaceAll('/', '')}T${convertTimeToUTC7(props.userInfo.weddingInfo.akad.date, props.userInfo.weddingInfo.akad.time).time.replaceAll(':', '')}00Z/${props.userInfo.weddingInfo.akad.date.replaceAll('/', '')}T${convertTimeToUTC7(props.userInfo.weddingInfo.endTime.date, props.userInfo.weddingInfo.endTime.time).time.replaceAll(':', '')}00Z&details=Merayakan+pernikahan+${props.userInfo.weddingInfo.couples.bride.name}+dan+${props.userInfo.weddingInfo.couples.groom.name}&location=Jl.+Kebahagiaan+No.123,+Jakarta`,
   },
 })
 

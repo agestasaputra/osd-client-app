@@ -11,12 +11,10 @@
   >
     <div class="text-center">
       <h4>{{ state.title }}</h4>
-      <h1
-        v-if="props.userInfo.weddingInfo.brides.length > 0"
-        class="text-[40px] capitalize leading-none"
-      >
-        {{ props.userInfo.weddingInfo.brides[0] }} &
-        {{ props.userInfo.weddingInfo.brides[1] }}
+      <!-- v-if="props.userInfo.weddingInfo.brides.length > 0" -->
+      <h1 class="text-[40px] capitalize leading-none">
+        {{ props.userInfo.weddingInfo.couples.bride.name }} &
+        {{ props.userInfo.weddingInfo.couples.groom.name }}
       </h1>
       <h4>{{ date }}</h4>
     </div>

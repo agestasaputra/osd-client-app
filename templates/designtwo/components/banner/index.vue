@@ -36,15 +36,12 @@
           ></div>
           <h3 class="ml-2 text-white">{{ state.bannerText.title }}</h3>
         </div>
-        <div
-          v-if="props.userInfo.weddingInfo.brides.length > 0"
-          class="my-4 flex flex-col"
-        >
+        <div class="my-4 flex flex-col">
           <h1 class="text-[60px] uppercase leading-none text-white shadow-sm">
-            {{ props.userInfo.weddingInfo.brides[0] }} &
+            {{ props.userInfo.weddingInfo.couples.bride.name }} &
           </h1>
           <h1 class="text-[60px] uppercase leading-none text-white shadow-sm">
-            {{ props.userInfo.weddingInfo.brides[1] }}
+            {{ props.userInfo.weddingInfo.couples.groom.name }}
           </h1>
         </div>
         <div class="flex flex-row items-center">

@@ -4,6 +4,14 @@ interface loveStoryItem {
   title: string
   desc: string
 }
+interface bank {
+  bank: string // 'BCA' | 'BNI' | 'BRI' | 'Mandiri'
+  number: string
+  name: string
+}
+interface galleryImage {
+  url: string
+}
 
 interface UserInfo {
   profile: {
@@ -14,7 +22,24 @@ interface UserInfo {
     name: string
   }
   weddingInfo: {
-    brides: string[]
+    couples: {
+      bride: {
+        name: string
+        fullName: string
+        parents: {
+          father: string
+          mother: string
+        }
+      }
+      groom: {
+        name: string
+        fullName: string
+        parents: {
+          father: string
+          mother: string
+        }
+      }
+    }
     akad: {
       date: string // YYYY/MM/DD
       time: string // HH:MM
@@ -38,6 +63,11 @@ interface UserInfo {
       time: string // HH:MM
     }
     loveStory: loveStoryItem[]
+    banks: bank[]
+    gallery: {
+      template: string
+      images: galleryImage[][]
+    }
   }
 }
 

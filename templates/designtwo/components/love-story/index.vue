@@ -4,9 +4,7 @@
     <hr class="border-t-1 mx-auto mb-6 mt-3 w-[50%] border-black" />
 
     <div class="flex h-fit w-fit">
-      <div
-        class="mr-8 w-5 rounded-xl bg-zinc-800 shadow-sm shadow-neutral-950/100"
-      ></div>
+      <div class="mr-8 w-5 rounded-xl bg-zinc-800"></div>
       <div>
         <div
           v-for="(item, key) in props.userInfo.weddingInfo.loveStory"
