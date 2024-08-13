@@ -56,7 +56,7 @@ const state = reactive({
 
 const date = computed(() => {
   try {
-    const akadDate = new Date(props.userInfo.weddingInfo.akad.date)
+    const akadDate = new Date(props.userInfo.weddingInfo.eventDetail.akad.date)
     const options: Intl.DateTimeFormatOptions = {
       weekday: 'long',
       year: 'numeric',

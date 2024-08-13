@@ -47,7 +47,7 @@ export default tseslint.config(
       'max-len': [
         'error',
         {
-          code: 120,
+          code: 150,
           ignoreUrls: true,
         },
       ],

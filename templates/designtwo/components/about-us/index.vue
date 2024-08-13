@@ -1,8 +1,11 @@
 <template>
   <section class="bg-zinc-900 px-10 py-[100px] text-center">
-    <h3 class="text-2xl">{{ state.title }}</h3>
-    <hr class="border-t-1 mx-auto mb-6 mt-3 w-[50%] border-white" />
-    <div v-dompurify-html="state.desc"></div>
+    <h3 class="text-2xl">{{ props.userInfo.weddingInfo.couples.title }}</h3>
+    <hr
+      v-if="props.userInfo.weddingInfo.couples.title"
+      class="border-t-1 mx-auto mb-6 mt-3 w-[50%] border-white"
+    />
+    <p class="text-xs">{{ props.userInfo.weddingInfo.couples.desc }}</p>
 
     <!-- The Bride -->
     <div class="mt-12">
@@ -41,21 +44,24 @@
       </div>
       <div class="mt-12">
         <div class="flex flex-col items-end text-right">
-          <p
-            class="my-3 w-[75%] text-3xl font-semibold"
-            v-dompurify-html="props.userInfo.weddingInfo.couples.bride.fullName"
-          ></p>
-          <p class="text-sm">{{ state.bride.desc[0] }}</p>
+          <p class="my-3 w-[70%] text-3xl font-semibold">
+            {{ props.userInfo.weddingInfo.couples.bride.fullName }}
+          </p>
+          <p class="text-sm">Putri dari</p>
           <p class="text-sm font-semibold">
             Bapak {{ props.userInfo.weddingInfo.couples.bride.parents.father }}
           </p>
-          <span class="inline text-sm"
-            >{{ state.bride.desc[1] }}
+          <span class="inline text-sm">
+            dan
             <p class="inline text-sm font-semibold">
               Ibu {{ props.userInfo.weddingInfo.couples.bride.parents.mother }}
             </p>
           </span>
-          <nuxt-link :to="state.bride.instagram" target="_blank" class="mt-2">
+          <nuxt-link
+            :to="props.userInfo.weddingInfo.couples.bride.instagram"
+            target="_blank"
+            class="mt-2"
+          >
             <button
               :class="{
                 'flex h-[30px] items-center rounded-md bg-[#b5a272]': true,
@@ -77,7 +83,7 @@
     </div>
 
     <!-- The Groom -->
-    <div class="">
+    <div>
       <hr class="border-t-1 mx-auto my-12 border-white" />
       <div class="flex flex-col items-end">
         <div
@@ -114,20 +120,24 @@
       </div>
       <div class="mt-12">
         <div class="flex flex-col items-start text-left">
-          <p class="my-3 w-[75%] text-3xl font-semibold">
+          <p class="my-3 w-[70%] text-3xl font-semibold">
             {{ props.userInfo.weddingInfo.couples.groom.fullName }}
           </p>
-          <p class="text-sm">{{ state.groom.desc[0] }}</p>
+          <p class="text-sm">Putra dari</p>
           <p class="text-sm font-semibold">
             Bapak {{ props.userInfo.weddingInfo.couples.groom.parents.father }}
           </p>
-          <span class="inline text-sm"
-            >{{ state.groom.desc[1] }}
+          <span class="inline text-sm">
+            dan
             <p class="inline text-sm font-semibold">
               Ibu {{ props.userInfo.weddingInfo.couples.groom.parents.mother }}
             </p>
           </span>
-          <nuxt-link :to="state.groom.instagram" target="_blank" class="mt-2">
+          <nuxt-link
+            :to="props.userInfo.weddingInfo.couples.groom.instagram"
+            target="_blank"
+            class="mt-2"
+          >
             <button
               :class="{
                 'flex h-[30px] items-center rounded-md bg-[#b5a272]': true,
@@ -166,31 +176,29 @@ const props = defineProps({
   },
 })
 
-const state = reactive({
-  title: 'We Found Love',
-  desc: `
-    <p style="font-size: 12px">Assalamu’alaikum Wr. Wb.</p>
-    <p style="font-size: 12px">Dengan memohon rahmat dan ridho Allah
-    Subhanahu Wa Ta’ala, insyaaAllah kami akan menyelenggarakan acara 
-    pernikahan kami :</p>
-  `,
-  bride: {
-    title: 'The Bride',
-    name: 'Siska Dwi Putri <br/> Yuliansyah',
-    desc: ['Putri dari', 'dan'],
-    father: 'Bapak Fulan',
-    mother: 'Ibu Fulan',
-    instagram: 'https://www.instagram.com/siskadptr',
-  },
-  groom: {
-    title: 'The Groom',
-    name: 'Agesta Budy <br/> Saputra',
-    desc: ['Putra dari', 'dan'],
-    father: 'Bapak Thoriq',
-    mother: 'Ibu Fuji',
-    instagram: 'https://www.instagram.com/agestasaputra',
-  },
-})
+// const state = reactive({
+//   title: 'We Found Love',
+//   desc: `
+//     <p style="font-size: 12px">Tanpa mengurangi rasa hormat, kami bermaksud mengundang
+//     Bapak/Ibu/Saudara/I untuk menghadiri acara Pernikahan kami :</p>
+//   `,
+//   bride: {
+//     title: 'The Bride',
+//     name: 'Siska Dwi Putri <br/> Yuliansyah',
+//     desc: ['Putri dari', 'dan'],
+//     father: 'Bapak Fulan',
+//     mother: 'Ibu Fulan',
+//     instagram: 'https://www.instagram.com/siskadptr',
+//   },
+//   groom: {
+//     title: 'The Groom',
+//     name: 'Agesta Budy <br/> Saputra',
+//     desc: ['Putra dari', 'dan'],
+//     father: 'Bapak Thoriq',
+//     mother: 'Ibu Fuji',
+//     instagram: 'https://www.instagram.com/agestasaputra',
+//   },
+// })
 </script>
 
 <style scoped></style>

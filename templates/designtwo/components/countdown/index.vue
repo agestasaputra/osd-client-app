@@ -28,7 +28,7 @@
     <nuxt-link v-if="time && time > 0" :to="state.button.link" target="_blank">
       <button
         :class="{
-          'rounded-full bg-zinc-900 px-4 py-2 pb-2 text-xs': true,
+          'rounded-full bg-green-600 px-4 py-2 pb-2 text-xs': true,
           'text-white shadow-md shadow-neutral-950/100': true,
         }"
       >
@@ -42,7 +42,7 @@
 import type { UserInfo } from '~/shared/interfaces.ts'
 
 defineOptions({
-  name: 'SectionCounter',
+  name: 'SectionCountdown',
 })
 
 const props = defineProps({
@@ -61,15 +61,17 @@ const state = reactive({
   It is when an imperfect couple learns to enjoy their differences.`,
   button: {
     name: 'Save the date',
-    link: `https://calendar.google.com/calendar/render?action=TEMPLATE&text=Wedding+Day+(${props.userInfo.weddingInfo.couples.bride.name}+%26+${props.userInfo.weddingInfo.couples.groom.name})&dates=${props.userInfo.weddingInfo.akad.date.replaceAll('/', '')}T${convertTimeToUTC7(props.userInfo.weddingInfo.akad.date, props.userInfo.weddingInfo.akad.time).time.replaceAll(':', '')}00Z/${props.userInfo.weddingInfo.akad.date.replaceAll('/', '')}T${convertTimeToUTC7(props.userInfo.weddingInfo.endTime.date, props.userInfo.weddingInfo.endTime.time).time.replaceAll(':', '')}00Z&details=Merayakan+pernikahan+${props.userInfo.weddingInfo.couples.bride.name}+dan+${props.userInfo.weddingInfo.couples.groom.name}&location=Jl.+Kebahagiaan+No.123,+Jakarta`,
+    link: `https://calendar.google.com/calendar/render?action=TEMPLATE&text=Wedding+Day+(${props.userInfo.weddingInfo.couples.bride.name}+%26+${props.userInfo.weddingInfo.couples.groom.name})&dates=${props.userInfo.weddingInfo.eventDetail.akad.date.replaceAll('/', '')}T${convertTimeToUTC7(props.userInfo.weddingInfo.eventDetail.akad.date, props.userInfo.weddingInfo.eventDetail.akad.time).time.replaceAll(':', '')}00Z/${props.userInfo.weddingInfo.eventDetail.akad.date.replaceAll('/', '')}T${convertTimeToUTC7(props.userInfo.weddingInfo.eventDetail.countdown.endTime.date, props.userInfo.weddingInfo.eventDetail.countdown.endTime.time).time.replaceAll(':', '')}00Z&details=Merayakan+pernikahan+${props.userInfo.weddingInfo.couples.bride.name}+dan+${props.userInfo.weddingInfo.couples.groom.name}&location=Jl.+Kebahagiaan+No.123,+Jakarta`,
   },
 })
 
 const time = computed(() => {
   try {
     const today = new Date()
-    const targetDayDate = new Date(props.userInfo.weddingInfo.akad.date)
-    const targetDayHours = props.userInfo.weddingInfo.akad.time
+    const targetDayDate = new Date(
+      props.userInfo.weddingInfo.eventDetail.akad.date,
+    )
+    const targetDayHours = props.userInfo.weddingInfo.eventDetail.akad.time
 
     const targetDay = new Date(
       targetDayDate.getFullYear(),
@@ -87,8 +89,8 @@ const time = computed(() => {
 
 onMounted(() => {
   convertTimeToUTC7(
-    props.userInfo.weddingInfo.akad.date,
-    props.userInfo.weddingInfo.akad.time,
+    props.userInfo.weddingInfo.eventDetail.akad.date,
+    props.userInfo.weddingInfo.eventDetail.akad.time,
   )
 })
 
