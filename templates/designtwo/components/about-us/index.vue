@@ -42,25 +42,33 @@
       <div class="mt-12">
         <div class="flex flex-col items-end text-right">
           <p
-            class="my-3 text-3xl font-semibold"
-            v-dompurify-html="state.bride.name"
+            class="my-3 w-[75%] text-3xl font-semibold"
+            v-dompurify-html="props.userInfo.weddingInfo.couples.bride.fullName"
           ></p>
-          <p class="text-sm">Putri Dari</p>
-          <p
-            class="text-sm font-semibold"
-            v-dompurify-html="state.bride.father"
-          ></p>
-          <span class="inline text-sm">
-            dan
-            <p
-              class="inline text-sm font-semibold"
-              v-dompurify-html="state.bride.mother"
-            ></p>
+          <p class="text-sm">{{ state.bride.desc[0] }}</p>
+          <p class="text-sm font-semibold">
+            Bapak {{ props.userInfo.weddingInfo.couples.bride.parents.father }}
+          </p>
+          <span class="inline text-sm"
+            >{{ state.bride.desc[1] }}
+            <p class="inline text-sm font-semibold">
+              Ibu {{ props.userInfo.weddingInfo.couples.bride.parents.mother }}
+            </p>
           </span>
           <nuxt-link :to="state.bride.instagram" target="_blank" class="mt-2">
             <button
-              class="h-[30px] rounded-md bg-[#b5a272] px-3 pb-1 text-sm text-zinc-900 shadow-md"
+              :class="{
+                'flex h-[30px] items-center rounded-md bg-[#b5a272]': true,
+                'px-3 text-sm text-zinc-900 shadow-md': true,
+              }"
             >
+              <img
+                src="/assets/icon/ig.png"
+                alt="Instagram"
+                class="mr-1 inline-block"
+                width="20"
+                height="20"
+              />
               Instagram
             </button>
           </nuxt-link>
@@ -106,26 +114,33 @@
       </div>
       <div class="mt-12">
         <div class="flex flex-col items-start text-left">
-          <p
-            class="my-3 text-3xl font-semibold"
-            v-dompurify-html="state.groom.name"
-          ></p>
+          <p class="my-3 w-[75%] text-3xl font-semibold">
+            {{ props.userInfo.weddingInfo.couples.groom.fullName }}
+          </p>
           <p class="text-sm">{{ state.groom.desc[0] }}</p>
-          <p
-            class="text-sm font-semibold"
-            v-dompurify-html="state.groom.father"
-          ></p>
+          <p class="text-sm font-semibold">
+            Bapak {{ props.userInfo.weddingInfo.couples.groom.parents.father }}
+          </p>
           <span class="inline text-sm"
             >{{ state.groom.desc[1] }}
-            <p
-              class="inline text-sm font-semibold"
-              v-dompurify-html="state.groom.mother"
-            ></p>
+            <p class="inline text-sm font-semibold">
+              Ibu {{ props.userInfo.weddingInfo.couples.groom.parents.mother }}
+            </p>
           </span>
           <nuxt-link :to="state.groom.instagram" target="_blank" class="mt-2">
             <button
-              class="h-[30px] rounded-md bg-[#b5a272] px-3 pb-1 text-sm text-zinc-900 shadow-md"
+              :class="{
+                'flex h-[30px] items-center rounded-md bg-[#b5a272]': true,
+                'px-3 text-sm text-zinc-900 shadow-md': true,
+              }"
             >
+              <img
+                src="/assets/icon/ig.png"
+                alt="Instagram"
+                class="mr-1 inline-block"
+                width="20"
+                height="20"
+              />
               Instagram
             </button>
           </nuxt-link>
@@ -137,6 +152,7 @@
 
 <script setup lang="ts">
 import type { UserInfo } from '~/shared/interfaces.ts'
+// import { IconBrandInstagram } from '@tabler/icons-vue'
 
 defineOptions({
   name: 'SectionAboutUs',

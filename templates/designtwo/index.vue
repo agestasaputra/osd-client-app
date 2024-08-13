@@ -20,7 +20,7 @@
       />
     </transition-fade>
     <transition-fade :duration="3000" :delay="2000">
-      <DesignTwoCounterComponent
+      <DesignTwoArRumComponent
         v-if="isContentVisible"
         :user-info="props.userInfo"
       />
@@ -32,13 +32,25 @@
       />
     </transition-fade>
     <transition-fade :duration="3000" :delay="2000">
-      <DesignTwoArRumComponent
+      <DesignTwoCounterComponent
         v-if="isContentVisible"
         :user-info="props.userInfo"
       />
     </transition-fade>
     <transition-fade :duration="3000" :delay="2000">
       <DesignTwoEventDetailComponent
+        v-if="isContentVisible"
+        :user-info="props.userInfo"
+      />
+    </transition-fade>
+    <transition-fade :duration="3000" :delay="2000">
+      <DesignTwoWeddingGiftComponent
+        v-if="isContentVisible"
+        :user-info="props.userInfo"
+      />
+    </transition-fade>
+    <transition-fade :duration="3000" :delay="2000">
+      <DesignTwoGalleryComponent
         v-if="isContentVisible"
         :user-info="props.userInfo"
       />
@@ -64,6 +76,8 @@ import DesignTwoAboutUsComponent from '~/templates/designtwo/components/about-us
 import DesignTwoArRumComponent from '~/templates/designtwo/components/ar-rum/index.vue'
 import DesignTwoEventDetailComponent from '~/templates/designtwo/components/event-detail/index.vue'
 import DesignTwoLoveStoryComponent from '~/templates/designtwo/components/love-story/index.vue'
+import DesignTwoWeddingGiftComponent from '~/templates/designtwo/components/wedding-gift/index.vue'
+import DesignTwoGalleryComponent from '~/templates/designtwo/components/gallery/index.vue'
 
 defineOptions({
   name: 'SectionTemplateDesign',
