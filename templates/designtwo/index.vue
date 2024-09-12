@@ -88,6 +88,14 @@
         :user-info="props.userInfo"
       />
     </transition-fade>
+
+    <!-- Wishes -->
+    <transition-fade :duration="3000" :delay="2000">
+      <DesignTwoWishesComponent
+        v-if="isContentVisible"
+        :user-info="props.userInfo"
+      />
+    </transition-fade>
   </main>
 </template>
 
@@ -106,6 +114,7 @@ import DesignTwoEventDetailComponent from '~/templates/designtwo/components/even
 import DesignTwoLoveStoryComponent from '~/templates/designtwo/components/love-story/index.vue'
 import DesignTwoWeddingGiftComponent from '~/templates/designtwo/components/wedding-gift/index.vue'
 import DesignTwoGalleryComponent from '~/templates/designtwo/components/gallery/index.vue'
+import DesignTwoWishesComponent from '~/templates/designtwo/components/wishes/index.vue'
 
 defineOptions({
   name: 'SectionTemplateDesign',
