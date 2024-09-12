@@ -110,7 +110,7 @@ async function fetchUserInfo() {
           title: 'Wedding Day',
           akad: {
             title: 'Akad Nikah',
-            date: '2024/08/25',
+            date: '2024/11/25',
             time: '13:00',
             location: {
               name: `Masjid Jami' Al-Falaah`,
@@ -121,7 +121,7 @@ async function fetchUserInfo() {
           },
           reception: {
             title: 'Resepsi',
-            date: '2024/08/25',
+            date: '2024/11/25',
             time: '15:00',
             location: {
               name: `Masjid Jami' Al-Falaah`,
@@ -133,7 +133,7 @@ async function fetchUserInfo() {
           countdown: {
             title: 'Count The Date',
             endTime: {
-              date: '2024/08/25',
+              date: '2024/11/25',
               time: '17:00',
             },
           },
@@ -243,6 +243,48 @@ async function fetchUserInfo() {
             },
           ],
         },
+        wishes: {
+          title: 'Wishes',
+          // desc: 'Kami mengundang Bapak/Ibu/Saudara/I untuk memberikan doa restu kepada kedua mempelai',
+          desc: 'Ucapan dan Doa Restu',
+          comments: {
+            total: 0,
+            data: [],
+            forms: {
+              fields: [
+                {
+                  name: 'nama',
+                  title: 'Nama',
+                  required: true,
+                  placeholder: 'John Doe',
+                  type: 'text',
+                },
+                {
+                  name: 'email',
+                  title: 'Email',
+                  required: true,
+                  placeholder: 'john.doe@gmail.com',
+                  type: 'email',
+                },
+                {
+                  name: 'pesan',
+                  title: 'Pesan',
+                  required: true,
+                  placeholder: 'Happy wedding, sakinah mawaddah warohmah.',
+                  type: 'textarea',
+                  rows: 4,
+                  cols: 50,
+                },
+              ],
+              button: [
+                {
+                  label: 'Submit',
+                  type: 'submit',
+                },
+              ],
+            },
+          },
+        },
       },
     }
     // handleAssignBrides(res)
@@ -294,7 +336,7 @@ async function fetchUserInfo() {
           title: 'Wedding Day',
           akad: {
             title: 'Akad Nikah',
-            date: '2024/08/25',
+            date: '2024/11/25',
             time: '13:00',
             location: {
               name: `Masjid Jami' Al-Falaah`,
@@ -305,7 +347,7 @@ async function fetchUserInfo() {
           },
           reception: {
             title: 'Resepsi',
-            date: '2024/08/25',
+            date: '2024/11/25',
             time: '15:00',
             location: {
               name: `Masjid Jami' Al-Falaah`,
@@ -317,7 +359,7 @@ async function fetchUserInfo() {
           countdown: {
             title: 'Count The Date',
             endTime: {
-              date: '2024/08/25',
+              date: '2024/11/25',
               time: '17:00',
             },
           },
@@ -426,6 +468,48 @@ async function fetchUserInfo() {
               url: 'https://www.youtube.com',
             },
           ],
+        },
+        wishes: {
+          title: 'Wishes',
+          // desc: 'Kami mengundang Bapak/Ibu/Saudara/I untuk memberikan doa restu kepada kedua mempelai',
+          desc: 'Ucapan dan Doa Restu',
+          comments: {
+            total: 0,
+            data: [],
+            forms: {
+              fields: [
+                {
+                  name: 'nama',
+                  title: 'Nama',
+                  required: true,
+                  placeholder: 'John Doe',
+                  type: 'text',
+                },
+                {
+                  name: 'email',
+                  title: 'Email',
+                  required: true,
+                  placeholder: 'john.doe@gmail.com',
+                  type: 'email',
+                },
+                {
+                  name: 'pesan',
+                  title: 'Pesan',
+                  required: true,
+                  placeholder: 'Happy wedding, sakinah mawaddah warohmah.',
+                  type: 'textarea',
+                  rows: 4,
+                  cols: 50,
+                },
+              ],
+              button: [
+                {
+                  label: 'Submit',
+                  type: 'submit',
+                },
+              ],
+            },
+          },
         },
       },
     }

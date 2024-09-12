@@ -1,4 +1,4 @@
-interface loveStoryList {
+interface LoveStoryList {
   date: string
   image: {
     url: string
@@ -7,19 +7,42 @@ interface loveStoryList {
   title: string
   desc: string
 }
-interface bankList {
+interface BankList {
   bank: string // 'BCA' | 'BNI' | 'BRI' | 'Mandiri'
   number: string
   name: string
 }
-interface imageList {
+interface ImageList {
   url: string
 }
-interface linkList {
+interface LinkList {
   name: string
   url: string
 }
-
+interface CommentDataList {
+  name: string
+  email: string
+  message: string
+  createdAt: string
+}
+interface WishesFormFieldList {
+  value?: string
+  name: string
+  title: string
+  required: boolean
+  placeholder: string
+  type: string
+  rows?: number
+  cols?: number
+}
+interface WishesFormButtonList {
+  label: string
+  type: string
+}
+interface Forms {
+  fields: WishesFormFieldList[]
+  button: WishesFormButtonList[]
+}
 interface UserInfo {
   profile: {
     name: string
@@ -85,18 +108,27 @@ interface UserInfo {
         }
       }
     }
-    loveStory: loveStoryList[]
-    banks: bankList[]
+    loveStory: LoveStoryList[]
+    banks: BankList[]
     gallery: {
       template: string
-      images: imageList[][]
+      images: ImageList[][]
     }
     liveStreaming: {
       title: string
       desc: string
-      links: linkList[]
+      links: LinkList[]
+    }
+    wishes: {
+      title: string
+      desc: string
+      comments: {
+        total: number
+        data: CommentDataList[]
+        forms: Forms
+      }
     }
   }
 }
 
-export type { loveStoryList, UserInfo }
+export type { LoveStoryList, UserInfo, Forms }
