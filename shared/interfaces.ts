@@ -1,31 +1,152 @@
-interface LoveStoryList {
-  date: string
-  image: {
-    url: string
-    template: string // 'horizontal' | 'vertical'
-  }
+export interface UserInfo {
+  profile: Profile
+  package: Package
+  weddingInfo: WeddingInfo
+}
+
+export interface Package {
+  name: string
+}
+
+export interface Profile {
+  name: string
+  email: string
+}
+
+export interface WeddingInfo {
+  couples: Couples
+  arRum: ArRum
+  eventDetail: EventDetail
+  banks: Bank[]
+  gallery: Gallery
+  loveStory: LoveStory[]
+  liveStreaming: LiveStreaming
+  wishes: Wishes
+}
+
+export interface ArRum {
   title: string
   desc: string
 }
-interface BankList {
-  bank: string // 'BCA' | 'BNI' | 'BRI' | 'Mandiri'
+
+export interface Bank {
+  bank: string
   number: string
   name: string
 }
-interface ImageList {
+
+export interface Couples {
+  title: string
+  desc: string
+  bride: Bride
+  groom: Bride
+}
+
+export interface Bride {
+  name: string
+  fullName: string
+  parents: Parents
+  instagram: string
+}
+
+export interface Parents {
+  father: string
+  mother: string
+}
+
+export interface EventDetail {
+  title: string
+  akad: Akad
+  reception: Akad
+  countdown: Countdown
+}
+
+export interface Akad {
+  title: string
+  date: string
+  time: string
+  location: Location
+}
+
+export interface Location {
+  name: string
+  address: string
+  maps: string
+}
+
+export interface Countdown {
+  title: string
+  endTime: EndTime
+}
+
+export interface EndTime {
+  date: string
+  time: string
+}
+
+export interface Gallery {
+  template: string
+  images: ImageElement[][]
+}
+
+export interface ImageElement {
   url: string
 }
-interface LinkList {
+
+export interface LiveStreaming {
+  title: string
+  desc: string
+  links: Link[]
+}
+
+export interface Link {
   name: string
   url: string
 }
-interface CommentDataList {
+
+export interface LoveStory {
+  date: string
+  image: LoveStoryImage
+  title: string
+  desc: string
+}
+
+export interface LoveStoryImage {
+  url: string
+  template: string
+}
+
+export interface Wishes {
+  title: string
+  desc: string
+  comments: Comments
+}
+
+export interface Comments {
+  total: number
+  datas: Data[]
+  button: Button
+  forms: Forms
+}
+
+export interface Data {
   name: string
   email: string
-  message: string
+  comment: string
   createdAt: string
 }
-interface WishesFormFieldList {
+
+export interface Button {
+  label: string
+  type: string
+}
+
+export interface Forms {
+  fields: Field[]
+  button: Button[]
+}
+
+export interface Field {
   value?: string
   name: string
   title: string
@@ -35,100 +156,3 @@ interface WishesFormFieldList {
   rows?: number
   cols?: number
 }
-interface WishesFormButtonList {
-  label: string
-  type: string
-}
-interface Forms {
-  fields: WishesFormFieldList[]
-  button: WishesFormButtonList[]
-}
-interface UserInfo {
-  profile: {
-    name: string
-    email: string
-  }
-  package: {
-    name: string
-  }
-  weddingInfo: {
-    couples: {
-      title: string
-      desc: string
-      bride: {
-        name: string
-        fullName: string
-        parents: {
-          father: string
-          mother: string
-        }
-        instagram: string
-      }
-      groom: {
-        name: string
-        fullName: string
-        parents: {
-          father: string
-          mother: string
-        }
-        instagram: string
-      }
-    }
-    arRum: {
-      title: string
-      desc: string
-    }
-    eventDetail: {
-      title: string // 'Wedding Event'
-      akad: {
-        title: string // 'Akad Nikah'
-        date: string // YYYY/MM/DD
-        time: string // HH:MM
-        location: {
-          name: string
-          address: string
-          maps: string
-        }
-      }
-      reception: {
-        title: string // 'Resepsi'
-        date: string // YYYY/MM/DD
-        time: string // HH:MM
-        location: {
-          name: string
-          address: string
-          maps: string
-        }
-      }
-      countdown: {
-        title: string
-        endTime: {
-          date: string // YYYY/MM/DD
-          time: string // HH:MM
-        }
-      }
-    }
-    loveStory: LoveStoryList[]
-    banks: BankList[]
-    gallery: {
-      template: string
-      images: ImageList[][]
-    }
-    liveStreaming: {
-      title: string
-      desc: string
-      links: LinkList[]
-    }
-    wishes: {
-      title: string
-      desc: string
-      comments: {
-        total: number
-        data: CommentDataList[]
-        forms: Forms
-      }
-    }
-  }
-}
-
-export type { LoveStoryList, UserInfo, Forms }
