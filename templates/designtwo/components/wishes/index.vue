@@ -4,24 +4,14 @@
       {{ props.userInfo.weddingInfo.wishes.title }}
     </h3>
     <hr class="border-t-1 mx-auto mb-6 mt-3 w-[50%] border-white" />
-    <!-- <p class="mb-1 text-sm font-semibold">{{ state.desc.title }}</p> -->
     <p class="text-center text-xs">
       {{ props.userInfo.weddingInfo.wishes.desc }}
     </p>
 
+    <!-- Form -->
     <div
       class="mt-6 max-w-sm rounded-lg border border-gray-200 bg-white shadow dark:border-gray-700 dark:bg-gray-800"
     >
-      <div
-        :class="[
-          'flex rounded-t-lg border-b border-gray-200',
-          'bg-gray-50 py-2 text-center text-gray-500 dark:border-gray-700',
-          'dark:bg-gray-800 dark:text-gray-400',
-        ]"
-      >
-        <h5 class="text-md w-full font-semibold">0 comments</h5>
-      </div>
-
       <form
         v-if="forms.fields.length > 0 && forms.button.length > 0"
         class="mx-auto max-w-sm p-5"
@@ -78,6 +68,88 @@
           </button>
         </template>
       </form>
+    </div>
+
+    <!-- Comment list -->
+    <div
+      v-if="props.userInfo.weddingInfo.wishes.comments.datas.length > 0"
+      class="mt-6 max-w-sm rounded-lg border border-gray-200 bg-white shadow dark:border-gray-700 dark:bg-gray-800"
+    >
+      <div
+        :class="[
+          'flex rounded-t-lg border-b border-gray-200',
+          'bg-gray-50 py-2 text-center text-gray-500 dark:border-gray-700',
+          'dark:bg-gray-800 dark:text-gray-400',
+        ]"
+      >
+        <h5 class="text-md w-full font-semibold">
+          {{ props.userInfo.weddingInfo.wishes.comments.total }}
+          {{
+            `comment${
+              props.userInfo.weddingInfo.wishes.comments.total > 1 ? 's' : ''
+            }`
+          }}
+        </h5>
+      </div>
+
+      <div class="max-h-[35vw] overflow-auto px-2 py-4">
+        <div
+          v-for="(item, key) in props.userInfo.weddingInfo.wishes.comments
+            .datas"
+          :key="key"
+          class="flex items-start gap-2.5 p-2"
+        >
+          <img
+            class="mt-1 h-8 w-8 rounded-full"
+            src="https://flowbite.com/docs/images/people/profile-picture-3.jpg"
+            alt="Jese image"
+          />
+          <div
+            class="leading-1.5 flex w-full max-w-[320px] flex-col rounded-e-xl rounded-es-xl border-gray-200 bg-gray-100 p-2 dark:bg-gray-700"
+          >
+            <div
+              class="flex items-center justify-between space-x-2 rtl:space-x-reverse"
+            >
+              <span class="text-xs font-semibold text-gray-900 dark:text-white">
+                {{ item.name }}
+              </span>
+              <span class="text-xs text-gray-500 dark:text-gray-400">
+                {{
+                  new Date(item.createdAt).toLocaleDateString('id-ID', {
+                    weekday: 'long',
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric',
+                  })
+                }}
+              </span>
+            </div>
+            <span
+              class="py-2.5 text-sm font-normal text-gray-900 dark:text-white"
+              v-dompurify-html="item.comment"
+            ></span>
+            <p class="text-right text-xs text-gray-500 dark:text-gray-400">
+              {{
+                new Date(item.createdAt).toLocaleTimeString('en-GB', {
+                  hour: '2-digit',
+                  minute: '2-digit',
+                })
+              }}
+            </p>
+          </div>
+        </div>
+        <div class="flex justify-center">
+          <button
+            :class="[
+              'mt-2 rounded-lg bg-green-700 px-3 py-2 text-xs font-medium text-white',
+              'hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300',
+              'dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800',
+            ]"
+          >
+            {{ props.userInfo.weddingInfo.wishes.comments.button.label }}
+          </button>
+        </div>
+      </div>
     </div>
   </section>
 </template>
